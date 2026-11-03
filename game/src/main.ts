@@ -12,6 +12,8 @@ import type { World } from "./world";
 const PUNCH_RADIUS = 2.5;
 const FINISH_RADIUS = 3;
 const PEEK_PENALTY = 30;
+/** Day / night toggle button, game-canvas pixels (top-left corner). */
+const NIGHT_BTN = { x: 10, y: 10, w: 92, h: 30 };
 
 const STAGES: Record<string, string> = {
   terrain: "рельєф",
@@ -127,6 +129,58 @@ async function main() {
   const raster = await rasteriseSvg(svg, params);
   const mapView = new MapView(mapCanvas, raster, params);
   const view = new GameView(world, sprites);
+
+  // ---------------------------------------------------------------- night mode
+  const NIGHT_KEY = "orient-night";
+  try {
+    view.night = localStorage.getItem(NIGHT_KEY) === "1";
+  } catch {
+    /* storage unavailable: day by default */
+  }
+  const toggleNight = () => {
+    view.night = !view.night;
+    try {
+      localStorage.setItem(NIGHT_KEY, view.night ? "1" : "0");
+    } catch {
+      /* ignore */
+    }
+    say(view.night ? "Ніч: видно лише те, що світить ліхтар" : "День");
+  };
+  const drawNightButton = () => {
+    const { x, y, w, h } = NIGHT_BTN;
+    g.fillStyle = "rgba(0,0,0,0.6)";
+    g.fillRect(x, y, w, h);
+    g.strokeStyle = view.night ? "#7fa7ff" : "#f0c040";
+    g.lineWidth = 2;
+    g.strokeRect(x + 1, y + 1, w - 2, h - 2);
+    // pixel icon: sun or crescent moon
+    const ix = x + 16;
+    const iy = y + h / 2;
+    if (view.night) {
+      g.fillStyle = "#cfe0ff";
+      g.beginPath();
+      g.arc(ix, iy, 8, 0, Math.PI * 2);
+      g.fill();
+      g.fillStyle = "rgb(0,0,0)";
+      g.beginPath();
+      g.arc(ix + 4, iy - 3, 7, 0, Math.PI * 2);
+      g.fill();
+    } else {
+      g.fillStyle = "#f0c040";
+      g.beginPath();
+      g.arc(ix, iy, 5, 0, Math.PI * 2);
+      g.fill();
+      for (let a = 0; a < 8; a++) {
+        const r = (a * Math.PI) / 4;
+        g.fillRect(Math.round(ix + Math.cos(r) * 8.5) - 1, Math.round(iy + Math.sin(r) * 8.5) - 1, 3, 3);
+      }
+    }
+    g.font = "bold 15px monospace";
+    g.fillStyle = "#fff";
+    g.textBaseline = "middle";
+    g.fillText(view.night ? "НІЧ" : "ДЕНЬ", x + 32, iy + 1);
+    g.textBaseline = "top";
+  };
   const course = world.course;
 
   let state: State = "ready";
@@ -187,6 +241,9 @@ async function main() {
         // one press = one hop; holding does nothing (key repeat is ignored above)
         if (state === "running") player.hop(e.code === "KeyA" ? -1 : 1);
         break;
+      case "KeyL":
+        toggleNight();
+        break;
       case "KeyQ":
         mapView.toggleCompass();
         say(mapView.compass.visible ? "Компас на карті: тягни основу, крути ручку й лімб" : `Азимут на компасі: ${deg(mapView.compass.bearing)}°`);
@@ -230,6 +287,15 @@ async function main() {
   let mouseTurn = 0;
   let dragging = false;
   gameCanvas.addEventListener("pointerdown", (e) => {
+    // the day / night button (canvas coordinates)
+    const r = gameCanvas.getBoundingClientRect();
+    const k = Math.min(r.width / gameCanvas.width, r.height / gameCanvas.height);
+    const cx = (e.clientX - r.left - (r.width - gameCanvas.width * k) / 2) / k;
+    const cy = (e.clientY - r.top - (r.height - gameCanvas.height * k) / 2) / k;
+    if (cx >= NIGHT_BTN.x && cx <= NIGHT_BTN.x + NIGHT_BTN.w && cy >= NIGHT_BTN.y && cy <= NIGHT_BTN.y + NIGHT_BTN.h) {
+      toggleNight();
+      return;
+    }
     dragging = true;
     gameCanvas.setPointerCapture(e.pointerId);
   });
@@ -324,7 +390,8 @@ async function main() {
     g.textBaseline = "top";
     const total = course.controls.length;
     const target = next < total ? `КП ${next + 1}/${total}` : "ФІНІШ";
-    panel(10, 10, [`Час ${fmt(time)}`, `Ціль: ${target}`, ...(peeks ? [`Підгл. ${peeks}×${PEEK_PENALTY}с`] : [])]);
+    drawNightButton();
+    panel(10, NIGHT_BTN.y + NIGHT_BTN.h + 8, [`Час ${fmt(time)}`, `Ціль: ${target}`, ...(peeks ? [`Підгл. ${peeks}×${PEEK_PENALTY}с`] : [])]);
     if (compass.raise > 0) {
       // compass held in the hand, bottom-left, ×3 pixels, set to the bearing taken on the map
       const ease = 1 - (1 - compass.raise) ** 3;
@@ -368,6 +435,8 @@ async function main() {
         `M — підглянути на карту (+${PEEK_PENALTY} с)`,
         "Карта: колесо — масштаб, тягни — зсув, F — уся",
         "",
+        "L або кнопка вгорі ліворуч — ніч / день",
+        "",
         "Enter / Пробіл / W — почати",
       ]);
     } else if (state === "finished") {
@@ -380,7 +449,7 @@ async function main() {
     g.font = "12px monospace";
     g.fillStyle = "rgba(255,255,255,0.55)";
     g.textAlign = "right";
-    g.fillText("A/D стрибок · Q азимут · C компас · M карта · R · N", gameCanvas.width - 8, gameCanvas.height - 16);
+    g.fillText("A/D стрибок · Q азимут · C компас · M карта · L ніч · R · N", gameCanvas.width - 8, gameCanvas.height - 16);
     g.textAlign = "left";
   }
 

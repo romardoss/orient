@@ -14,6 +14,28 @@ const VIS_MIN = 10;
 const VIS_SAMPLE_R = 9;
 const FOG_LEVELS = 6;
 const FOG_MAX = 0.62;
+/** Night: a head torch — a cone ahead of the runner (screen-up, the view is heading-up). */
+const TORCH_RANGE = 26; // m
+const TORCH_HALF_ANGLE = (28 * Math.PI) / 180;
+/** Torch height above the ground (for shadow length) and the occluder size, metres. */
+const TORCH_SHADOW_R = 0.42;
+const NIGHT_DARK = 0.965;
+const NIGHT_LEVELS = 7;
+
+const smooth = (e0: number, e1: number, x: number) => {
+  const t = Math.max(0, Math.min(1, (x - e0) / (e1 - e0)));
+  return t * t * (3 - 2 * t);
+};
+
+/** Torch light 0..1 at a buffer pixel (static in screen space, the camera turns with the runner). */
+export function torchLight(x: number, y: number): number {
+  const dx = (x - EYE_X) / PX;
+  const dy = (y - EYE_Y) / PX;
+  const d = Math.hypot(dx, dy);
+  const ang = Math.abs(Math.atan2(dx, -dy));
+  return (1 - smooth(TORCH_HALF_ANGLE * 0.6, TORCH_HALF_ANGLE, ang)) * (1 - smooth(TORCH_RANGE * 0.55, TORCH_RANGE, d));
+}
+
 /**
  * Perspective from a camera CAM_H metres above the runner: a point h metres above the runner's eye
  * level is drawn CAM_H / (CAM_H − h) times further from the runner and that much bigger. Covers both
@@ -82,6 +104,9 @@ export class GameView {
   private readonly fog = document.createElement("canvas");
   private readonly fogData: ImageData;
   private fogVis = -1;
+  /** Night mode: darkness everywhere except the head torch beam. */
+  night = false;
+  private nightMask?: HTMLCanvasElement;
   private readonly lineCanvas = document.createElement("canvas");
   private readonly lineImg = new ImageData((CS + 1) * PX, (CS + 1) * PX);
 
@@ -129,6 +154,91 @@ export class GameView {
   updateVisibility(p: Player, dt: number): void {
     const target = this.visibilityAt(p.x, p.y);
     this.vis += (target - this.vis) * Math.min(1, dt * 1.5);
+  }
+
+  private drawPlayer(p: Player): void {
+    const { b, sp } = this;
+    const moving = Math.abs(p.speed) > 0.1;
+    const frame = moving ? 1 + (Math.floor(p.stepPhase * 2) % 2) : 0;
+    const hop = p.hopHeight;
+    if (hop > 0) {
+      // in the air: shadow stays on the ground, the runner gets "closer" to the camera
+      b.fillStyle = "rgba(0,0,0,0.3)";
+      b.fillRect(EYE_X - 4, EYE_Y + 3, 8, 3);
+    }
+    const ps = Math.round(12 + hop * 4);
+    b.drawImage(sp.player, frame * 12, 0, 12, 12, Math.round(EYE_X - ps / 2), Math.round(EYE_Y - ps / 2 - hop * 2), ps, ps);
+  }
+
+  /**
+   * Shadows cast by the head torch: every opaque obstacle in the beam (tree trunk, bush, boulder,
+   * wall, building…) throws a shadow wedge away from the runner — a point light at the eye.
+   */
+  private drawTorchShadows(p: Player): void {
+    const { b, world: w } = this;
+    const R = TORCH_RANGE + 1;
+    const far = (TORCH_RANGE + 4) * PX;
+    b.fillStyle = `rgba(3,5,14,${NIGHT_DARK})`;
+    b.beginPath();
+    for (let j = Math.max(0, Math.floor(p.y - R)); j <= Math.min(w.h - 1, Math.floor(p.y + R)); j++) {
+      for (let i = Math.max(0, Math.floor(p.x - R)); i <= Math.min(w.w - 1, Math.floor(p.x + R)); i++) {
+        const k = j * w.w + i;
+        if (!w.solid[k]) continue;
+        const g = w.ground[k];
+        if (g === GROUND.deep || g === GROUND.deepmarsh) continue; // water doesn't block light
+        const [cx, cy] = this.toScreen(p, i + 0.5, j + 0.5);
+        if (torchLight(cx, cy) <= 0.01) continue;
+        const dx = cx - EYE_X;
+        const dy = cy - EYE_Y;
+        const d = Math.hypot(dx, dy);
+        if (d < PX * 0.6) continue;
+        const r = (isTree(w.obj[k]) ? TORCH_SHADOW_R * 0.8 : TORCH_SHADOW_R * 1.2) * PX;
+        // tangent points of the occluder seen from the light, then projected far away
+        const nx = -dy / d;
+        const ny = dx / d;
+        const ax = cx + nx * r;
+        const ay = cy + ny * r;
+        const bx = cx - nx * r;
+        const by = cy - ny * r;
+        const sa = far / Math.hypot(ax - EYE_X, ay - EYE_Y);
+        const sb = far / Math.hypot(bx - EYE_X, by - EYE_Y);
+        b.moveTo(ax, ay);
+        b.lineTo(EYE_X + (ax - EYE_X) * sa, EYE_Y + (ay - EYE_Y) * sa);
+        b.lineTo(EYE_X + (bx - EYE_X) * sb, EYE_Y + (by - EYE_Y) * sb);
+        b.lineTo(bx, by);
+        b.closePath();
+      }
+    }
+    // one fill for all wedges: overlaps don't get darker than the night itself
+    b.fill("nonzero");
+  }
+
+  /** Darkness with the torch beam cut out, dithered; computed once (it never moves on screen). */
+  private drawNight(): void {
+    if (!this.nightMask) {
+      const c = document.createElement("canvas");
+      c.width = BUF_W;
+      c.height = BUF_H;
+      const img = new ImageData(BUF_W, BUF_H);
+      const d = img.data;
+      for (let y = 0; y < BUF_H; y++) {
+        for (let x = 0; x < BUF_W; x++) {
+          const a = (1 - torchLight(x + 0.5, y + 0.5)) * NIGHT_LEVELS;
+          const lvl = Math.min(NIGHT_LEVELS, Math.floor(a) + (a - Math.floor(a) > BAYER[(y & 3) * 4 + (x & 3)] ? 1 : 0));
+          const i = (y * BUF_W + x) * 4;
+          d[i] = 3;
+          d[i + 1] = 5;
+          d[i + 2] = 14;
+          d[i + 3] = Math.round((lvl / NIGHT_LEVELS) * NIGHT_DARK * 255);
+        }
+      }
+      c.getContext("2d")!.putImageData(img, 0, 0);
+      this.nightMask = c;
+    }
+    // a faint warm tint inside the beam
+    this.b.fillStyle = "rgba(255,225,160,0.06)";
+    this.b.fillRect(0, 0, BUF_W, BUF_H);
+    this.b.drawImage(this.nightMask, 0, 0);
   }
 
   /** Dithered darkness beyond the visibility radius, centred on the runner. */
@@ -376,17 +486,9 @@ export class GameView {
     }
     marker(sp.finish, course.finish.x, course.finish.y, 0, 11);
 
-    // player
-    const moving = Math.abs(p.speed) > 0.1;
-    const frame = moving ? 1 + (Math.floor(p.stepPhase * 2) % 2) : 0;
-    const hop = p.hopHeight;
-    if (hop > 0) {
-      // in the air: shadow stays on the ground, the runner gets "closer" to the camera
-      b.fillStyle = "rgba(0,0,0,0.3)";
-      b.fillRect(EYE_X - 4, EYE_Y + 3, 8, 3);
-    }
-    const ps = Math.round(12 + hop * 4);
-    b.drawImage(sp.player, frame * 12, 0, 12, 12, Math.round(EYE_X - ps / 2), Math.round(EYE_Y - ps / 2 - hop * 2), ps, ps);
+    this.drawPlayer(p);
+    // torch shadows fall on the ground, under the crowns (the crowns are above the torch)
+    if (this.night) this.drawTorchShadows(p);
 
     // canopies above the player
     b.save();
@@ -428,11 +530,17 @@ export class GameView {
     b.restore();
 
     this.drawFog();
+    if (this.night) {
+      this.drawNight();
+      // the runner is always visible (reflective kit / the torch spill on the body)
+      this.drawPlayer(p);
+    }
 
-    // control code plates (only when close enough to read)
+    // control code plates (only when close enough to read — and, at night, lit by the torch)
     b.font = "8px monospace";
     b.textBaseline = "top";
     for (const [x, y, s] of labels) {
+      if (this.night && torchLight(x, y) < 0.5) continue;
       const tw = Math.ceil(b.measureText(s).width) + 2;
       b.fillStyle = "#ffffff";
       b.fillRect(Math.round(x), Math.round(y), tw, 8);
