@@ -391,6 +391,15 @@ async function main() {
     const total = course.controls.length;
     const target = next < total ? `КП ${next + 1}/${total}` : "ФІНІШ";
     drawNightButton();
+    // credit, top-right corner
+    g.font = "bold 13px monospace";
+    g.textAlign = "right";
+    g.textBaseline = "top";
+    g.fillStyle = "rgba(0,0,0,0.6)";
+    g.fillText("Created by Romardoss", gameCanvas.width - 9, 13);
+    g.fillStyle = "rgba(255,255,255,0.8)";
+    g.fillText("Created by Romardoss", gameCanvas.width - 10, 12);
+    g.textAlign = "left";
     panel(10, NIGHT_BTN.y + NIGHT_BTN.h + 8, [`Час ${fmt(time)}`, `Ціль: ${target}`, ...(peeks ? [`Підгл. ${peeks}×${PEEK_PENALTY}с`] : [])]);
     if (compass.raise > 0) {
       // compass held in the hand, bottom-left, ×3 pixels, set to the bearing taken on the map
