@@ -20,6 +20,12 @@ node game/tools/make-sprites.mjs   # перегенерувати піксель
 генерує карти прямо в браузері (Web Worker) і бере з бібліотеки лише
 `isom-2017-2/symbols.json` та `control-descriptions/symbols.json`. Викладіть увесь `dist/` у корінь
 або підкаталог будь-якого статичного хостингу (GitHub Pages, Netlify, nginx) — сервер не потрібен.
+Важливо: публікувати треба саме зібраний `dist/`, а не корінь репозиторію — `index.html` у корені
+посилається на `game/src/main.ts` (сирий TypeScript), який браузер не виконає.
+
+**GitHub Pages.** `.github/workflows/deploy.yml` на кожен push у `main` робить `npm ci` →
+`npm run build` і публікує `dist/`. Один раз: Settings → Pages → Build and deployment →
+Source: **GitHub Actions**.
 
 **Помилки завантаження.** Рядок «Генерація карти: …» ніколи не зависає мовчки: якщо щось не так,
 він показує `Помилка: …` з причиною. Звичайний (не модульний) скрипт-запобіжник в `index.html`
