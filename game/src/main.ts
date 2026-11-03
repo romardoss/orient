@@ -128,6 +128,7 @@ async function main() {
     player = new Player(course.start.x, course.start.y);
     player.heading = Math.random() * Math.PI * 2;
     compass = new Compass();
+    compass.open = true; // in the hand from the start; C puts it away / takes it out
     next = 0;
     time = 0;
     peeks = 0;
@@ -245,9 +246,7 @@ async function main() {
       turn: mouseTurn,
     };
     mouseTurn = 0;
-    // compass in hand = careful walking
-    const slow = compass.raise > 0 ? 0.45 : 1;
-    const step = player.update(dt, inp, world, slow);
+    const step = player.update(dt, inp, world, 1);
     view.updateVisibility(player, dt);
     compass.update(dt, player.heading, Math.min(1, Math.abs(player.speed) / RUN_SPEED), step);
     if (step && state === "running") beep(90 + Math.random() * 30, 0.03);
@@ -347,6 +346,7 @@ async function main() {
         "   (тягни основу, оранжева ручка — поворот,",
         "    лімб — тягни/колесо; лінії лімба ∥ лініям N)",
         "C — компас у руку: стрілка в «будиночок» = азимут",
+        "   (на бігу стрілка сильно гуляє — зупиніться, щоб звірити)",
         `M — підглянути на карту (+${PEEK_PENALTY} с)`,
         "Карта: колесо — масштаб, тягни — зсув, F — уся",
         "",

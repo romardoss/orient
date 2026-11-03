@@ -13,6 +13,11 @@ const PLATE_BACK = 30;
 const HOUSING_R = 19;
 const CAPSULE_R = 15;
 const KNOB = { x: 0, y: -59, r: 4.5 };
+/**
+ * Drawing scale of the compass on the paper: the geometry above is in "design units", the real
+ * plate is SIZE × smaller (≈ 26 × 58 mm, a small orienteering baseplate on a 200 mm map).
+ */
+const SIZE = 0.6;
 
 export type CompassPart = "knob" | "housing" | "plate";
 
@@ -31,7 +36,7 @@ export class MapCompass {
     const dy = py - this.y;
     const c = Math.cos(this.plate);
     const s = Math.sin(this.plate);
-    return [dx * c + dy * s, -dx * s + dy * c];
+    return [(dx * c + dy * s) / SIZE, (-dx * s + dy * c) / SIZE];
   }
 
   hit(px: number, py: number): CompassPart | null {
@@ -50,10 +55,12 @@ export class MapCompass {
 
   draw(ctx: CanvasRenderingContext2D, zoom: number): void {
     if (!this.visible) return;
-    const px = 1 / zoom; // one screen pixel in mm
+    const pxs = 1 / zoom; // one screen pixel in paper mm
+    const px = pxs / SIZE; // … in compass design units
     ctx.save();
     ctx.translate(this.x, this.y);
     ctx.rotate(this.plate);
+    ctx.scale(SIZE, SIZE);
 
     // baseplate (transparent acrylic)
     ctx.beginPath();
@@ -67,10 +74,10 @@ export class MapCompass {
     ctx.strokeStyle = "rgba(10,20,25,0.85)";
     ctx.lineWidth = Math.max(0.12, 0.8 * px);
     ctx.beginPath();
-    for (let y = PLATE_FRONT + 4; y <= PLATE_BACK - 4; y += 1) {
-      const n = Math.round(y - PLATE_FRONT);
+    // real millimetres along the edge, whatever the drawing scale
+    for (let n = 0, y = PLATE_FRONT + 4; y <= PLATE_BACK - 4; n++, y = PLATE_FRONT + 4 + n / SIZE) {
       const len = n % 10 === 0 ? 4 : n % 5 === 0 ? 2.6 : 1.4;
-      if (zoom < 4 && n % 5) continue;
+      if (zoom * SIZE < 4 && n % 5) continue;
       ctx.moveTo(-PLATE_W / 2, y);
       ctx.lineTo(-PLATE_W / 2 + len, y);
       ctx.moveTo(PLATE_W / 2, y);
@@ -124,7 +131,7 @@ export class MapCompass {
     // bezel ticks every 2°, labels every 30°
     ctx.strokeStyle = "#f2f2f2";
     ctx.beginPath();
-    for (let a = 0; a < 360; a += zoom < 4 ? 10 : 2) {
+    for (let a = 0; a < 360; a += zoom * SIZE < 4 ? 10 : 2) {
       const r = (a * Math.PI) / 180;
       const len = a % 10 === 0 ? 2 : 1;
       const s = Math.sin(r);
@@ -180,6 +187,7 @@ export class MapCompass {
     // needle: the map is north-up, so on the map it points straight up
     ctx.save();
     ctx.translate(this.x, this.y);
+    ctx.scale(SIZE, SIZE);
     ctx.fillStyle = "rgba(225,45,40,0.95)";
     ctx.beginPath();
     ctx.moveTo(0, -12.5);
@@ -200,11 +208,11 @@ export class MapCompass {
     const label = `${((Math.round((this.bearing * 180) / Math.PI) % 360) + 360) % 360}°`;
     ctx.save();
     ctx.translate(this.x, this.y);
-    ctx.font = `bold ${14 * px}px monospace`;
+    ctx.font = `bold ${14 * pxs}px monospace`;
     ctx.textAlign = "left";
     ctx.textBaseline = "middle";
-    const lx = HOUSING_R + 26 * px;
-    ctx.lineWidth = 3 * px;
+    const lx = HOUSING_R * SIZE + 26 * pxs;
+    ctx.lineWidth = 3 * pxs;
     ctx.strokeStyle = "#fff";
     ctx.strokeText(label, lx, 0);
     ctx.fillStyle = "#97218b";

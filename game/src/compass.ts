@@ -44,8 +44,8 @@ export class Compass {
     const err = wrap(this.angle - target);
     let acc = -STIFFNESS * err - DAMPING * this.vel;
     // hand tremor while walking + a kick on every footstep
-    acc += gauss() * 9 * moveFrac;
-    if (step) this.vel += (Math.random() - 0.5) * 2.2 * Math.max(0.3, moveFrac);
+    acc += gauss() * 24 * moveFrac;
+    if (step) this.vel += (Math.random() - 0.5) * 5 * Math.max(0.3, moveFrac);
     // lifting the compass also disturbs it
     if (this.raise < 1) acc += gauss() * 6;
     this.vel += acc * dt;

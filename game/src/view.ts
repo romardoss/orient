@@ -14,6 +14,8 @@ const VIS_MIN = 7;
 const VIS_SAMPLE_R = 9;
 const FOG_LEVELS = 6;
 const FOG_MAX = 0.93;
+/** Relief shading steps on each side (light / shadow). */
+const SHADE_LEVELS = 3;
 /** 4×4 Bayer matrix, for pixel-art dithered fog edges. */
 const BAYER = [0, 8, 2, 10, 12, 4, 14, 6, 3, 11, 1, 9, 15, 7, 13, 5].map((v) => (v + 0.5) / 16);
 
@@ -62,6 +64,8 @@ export class GameView {
   private readonly fog = document.createElement("canvas");
   private readonly fogData: ImageData;
   private fogVis = -1;
+  private readonly shadeCanvas = document.createElement("canvas");
+  private readonly shadeImg = new ImageData((CS + 1) * PX, (CS + 1) * PX);
 
   constructor(
     private readonly world: World,
@@ -73,6 +77,7 @@ export class GameView {
     this.fog.width = BUF_W;
     this.fog.height = BUF_H;
     this.fogData = new ImageData(BUF_W, BUF_H);
+    this.shadeCanvas.width = this.shadeCanvas.height = (CS + 1) * PX;
   }
 
   /**
@@ -191,16 +196,9 @@ export class GameView {
           g.fillStyle = `rgba(20,70,10,${0.1 + 0.08 * v})`;
           g.fillRect(px, py, PX, PX);
         }
-        const s = w.shade[k];
-        if (s > 4) {
-          g.fillStyle = `rgba(255,250,215,${(s / 100) * 0.22})`;
-          g.fillRect(px, py, PX, PX);
-        } else if (s < -4) {
-          g.fillStyle = `rgba(10,15,40,${(-s / 100) * 0.32})`;
-          g.fillRect(px, py, PX, PX);
-        }
       }
     }
+    this.bakeShade(g, i0, j0);
     // tree shadows first, then low objects
     for (let pass = 0; pass < 2; pass++) {
       for (let j = j0 - MARGIN; j < j0 + CS + 1 + MARGIN; j++) {
@@ -231,6 +229,53 @@ export class GameView {
       }
     }
     return { canvas, trees };
+  }
+
+  /**
+   * Relief light & shadow as stepped terraces: the cell shade is interpolated per pixel, then
+   * quantised to SHADE_LEVELS steps each way with a world-anchored Bayer dither, so slopes read as
+   * crisp pixel-art bands with dithered edges (seamless across chunks).
+   */
+  private bakeShade(g: CanvasRenderingContext2D, i0: number, j0: number): void {
+    const w = this.world;
+    const S = (CS + 1) * PX;
+    const img = this.shadeImg;
+    const d = img.data;
+    const cell = (i: number, j: number) => w.shade[Math.max(0, Math.min(w.h - 1, j)) * w.w + Math.max(0, Math.min(w.w - 1, i))];
+    for (let py = 0; py < S; py++) {
+      const v = j0 + (py + 0.5) / PX - 0.5;
+      const j = Math.floor(v);
+      const ty = v - j;
+      const gy = j0 * PX + py;
+      for (let px = 0; px < S; px++) {
+        const u = i0 + (px + 0.5) / PX - 0.5;
+        const i = Math.floor(u);
+        const tx = u - i;
+        const a = cell(i, j);
+        const b = cell(i + 1, j);
+        const c = cell(i, j + 1);
+        const e = cell(i + 1, j + 1);
+        const s = (a + (b - a) * tx + (c - a) * ty + (a - b - c + e) * tx * ty) / 100;
+        const t = s * SHADE_LEVELS;
+        const fl = Math.floor(t);
+        const lvl = Math.max(-SHADE_LEVELS, Math.min(SHADE_LEVELS, fl + (t - fl > BAYER[(gy & 3) * 4 + ((i0 * PX + px) & 3)] ? 1 : 0)));
+        const o = (py * S + px) * 4;
+        if (lvl > 0) {
+          d[o] = 255;
+          d[o + 1] = 248;
+          d[o + 2] = 210;
+          d[o + 3] = Math.round((lvl / SHADE_LEVELS) * 0.24 * 255);
+        } else if (lvl < 0) {
+          d[o] = 12;
+          d[o + 1] = 16;
+          d[o + 2] = 42;
+          d[o + 3] = Math.round((-lvl / SHADE_LEVELS) * 0.5 * 255);
+        } else d[o + 3] = 0;
+      }
+    }
+    const sc = this.shadeCanvas.getContext("2d")!;
+    sc.putImageData(img, 0, 0);
+    g.drawImage(this.shadeCanvas, 0, 0);
   }
 
   /** World → buffer coordinates for the current camera. */
