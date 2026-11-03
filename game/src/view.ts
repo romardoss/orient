@@ -6,16 +6,34 @@
 import type { Compass } from "./compass";
 import type { Player } from "./player";
 import type { Sprites } from "./sprites";
-import { Obj, isTree, type World } from "./world";
+import { GROUND, Obj, heightAt, isTree, type World } from "./world";
 
 /** Visibility radius, metres: open land vs. the densest thicket. */
 const VIS_OPEN = 58;
-const VIS_MIN = 7;
+const VIS_MIN = 10;
 const VIS_SAMPLE_R = 9;
 const FOG_LEVELS = 6;
-const FOG_MAX = 0.93;
-/** Relief shading steps on each side (light / shadow). */
-const SHADE_LEVELS = 3;
+const FOG_MAX = 0.62;
+/**
+ * Perspective from a camera CAM_H metres above the runner: a point h metres above the runner's eye
+ * level is drawn CAM_H / (CAM_H − h) times further from the runner and that much bigger. Covers both
+ * the terrain (uphill = closer) and the object's own height (tree tops lean outwards = parallax).
+ */
+const CAM_H = 80;
+const PERSP_MIN = 0.7;
+const PERSP_MAX = 1.6;
+/** Max crown / flag enlargement (smaller than PERSP_MAX, so the lean stays visible uphill). */
+const SIZE_MAX = 1.3;
+/** Height of the drawn top of things, metres: canopies per tree sprite, control flags. */
+const CANOPY_H = [1, 0.7, 0.5];
+const FLAG_H = 0.9;
+/**
+ * World isolines are denser than the map: CONTOUR_SPLIT lines per map contour interval. Lines on
+ * the map's own contours are normal, the in-between ones fainter, every 5th map contour is an
+ * index contour (thicker, darker), as on the map.
+ */
+const CONTOUR_SPLIT = 2;
+const INDEX_EVERY = 5 * CONTOUR_SPLIT;
 /** 4×4 Bayer matrix, for pixel-art dithered fog edges. */
 const BAYER = [0, 8, 2, 10, 12, 4, 14, 6, 3, 11, 1, 9, 15, 7, 13, 5].map((v) => (v + 0.5) / 16);
 
@@ -64,8 +82,8 @@ export class GameView {
   private readonly fog = document.createElement("canvas");
   private readonly fogData: ImageData;
   private fogVis = -1;
-  private readonly shadeCanvas = document.createElement("canvas");
-  private readonly shadeImg = new ImageData((CS + 1) * PX, (CS + 1) * PX);
+  private readonly lineCanvas = document.createElement("canvas");
+  private readonly lineImg = new ImageData((CS + 1) * PX, (CS + 1) * PX);
 
   constructor(
     private readonly world: World,
@@ -77,7 +95,7 @@ export class GameView {
     this.fog.width = BUF_W;
     this.fog.height = BUF_H;
     this.fogData = new ImageData(BUF_W, BUF_H);
-    this.shadeCanvas.width = this.shadeCanvas.height = (CS + 1) * PX;
+    this.lineCanvas.width = this.lineCanvas.height = (CS + 1) * PX;
   }
 
   /**
@@ -116,8 +134,8 @@ export class GameView {
   /** Dithered darkness beyond the visibility radius, centred on the runner. */
   private drawFog(): void {
     const v = this.vis;
-    const inner = v * 0.6 * PX;
-    const outer = v * 1.2 * PX;
+    const inner = v * 0.75 * PX;
+    const outer = v * 1.6 * PX;
     if (inner > Math.hypot(BUF_W, BUF_H)) return;
     if (Math.abs(v - this.fogVis) > 0.05) {
       this.fogVis = v;
@@ -196,9 +214,17 @@ export class GameView {
           g.fillStyle = `rgba(20,70,10,${0.1 + 0.08 * v})`;
           g.fillRect(px, py, PX, PX);
         }
+        const s = w.shade[k];
+        if (s > 4) {
+          g.fillStyle = `rgba(255,250,215,${(s / 100) * 0.26})`;
+          g.fillRect(px, py, PX, PX);
+        } else if (s < -4) {
+          g.fillStyle = `rgba(10,15,40,${(-s / 100) * 0.48})`;
+          g.fillRect(px, py, PX, PX);
+        }
       }
     }
-    this.bakeShade(g, i0, j0);
+    this.bakeContours(g, i0, j0);
     // tree shadows first, then low objects
     for (let pass = 0; pass < 2; pass++) {
       for (let j = j0 - MARGIN; j < j0 + CS + 1 + MARGIN; j++) {
@@ -210,9 +236,9 @@ export class GameView {
           const py = (j - j0 + 0.5) * PX;
           if (isTree(o)) {
             if (pass === 0) {
-              g.fillStyle = "rgba(0,10,0,0.28)";
+              g.fillStyle = "rgba(0,10,0,0.38)";
               g.beginPath();
-              g.ellipse(px + 5, py + 5, 11, 9, 0.6, 0, Math.PI * 2);
+              g.ellipse(px + 6, py + 6, 12, 9.5, 0.7, 0, Math.PI * 2);
               g.fill();
               // trunk
               g.fillStyle = "#4a3020";
@@ -232,50 +258,66 @@ export class GameView {
   }
 
   /**
-   * Relief light & shadow as stepped terraces: the cell shade is interpolated per pixel, then
-   * quantised to SHADE_LEVELS steps each way with a world-anchored Bayer dither, so slopes read as
-   * crisp pixel-art bands with dithered edges (seamless across chunks).
+   * Thin contour lines like on the printed map (same interval): a pixel is on a contour where the
+   * height crosses a multiple of the interval between it and its right / lower neighbour.
    */
-  private bakeShade(g: CanvasRenderingContext2D, i0: number, j0: number): void {
+  private bakeContours(g: CanvasRenderingContext2D, i0: number, j0: number): void {
     const w = this.world;
     const S = (CS + 1) * PX;
-    const img = this.shadeImg;
-    const d = img.data;
-    const cell = (i: number, j: number) => w.shade[Math.max(0, Math.min(w.h - 1, j)) * w.w + Math.max(0, Math.min(w.w - 1, i))];
+    const N = S + 1;
+    const ci = w.contourInterval / CONTOUR_SPLIT;
+    const lv = new Int32Array(N * N);
+    for (let py = 0; py < N; py++)
+      for (let px = 0; px < N; px++) lv[py * N + px] = Math.floor(heightAt(w.height, i0 + (px + 0.5) / PX, j0 + (py + 0.5) / PX) / ci);
+    const d = this.lineImg.data;
+    d.fill(0);
     for (let py = 0; py < S; py++) {
-      const v = j0 + (py + 0.5) / PX - 0.5;
-      const j = Math.floor(v);
-      const ty = v - j;
-      const gy = j0 * PX + py;
+      const cj = j0 + Math.floor(py / PX);
       for (let px = 0; px < S; px++) {
-        const u = i0 + (px + 0.5) / PX - 0.5;
-        const i = Math.floor(u);
-        const tx = u - i;
-        const a = cell(i, j);
-        const b = cell(i + 1, j);
-        const c = cell(i, j + 1);
-        const e = cell(i + 1, j + 1);
-        const s = (a + (b - a) * tx + (c - a) * ty + (a - b - c + e) * tx * ty) / 100;
-        const t = s * SHADE_LEVELS;
-        const fl = Math.floor(t);
-        const lvl = Math.max(-SHADE_LEVELS, Math.min(SHADE_LEVELS, fl + (t - fl > BAYER[(gy & 3) * 4 + ((i0 * PX + px) & 3)] ? 1 : 0)));
+        const ci2 = i0 + Math.floor(px / PX);
+        if (ci2 >= w.w || cj >= w.h) continue;
+        const gr = w.ground[cj * w.w + ci2];
+        if (gr === GROUND.deep || gr === GROUND.shallow) continue;
+        const a = lv[py * N + px];
+        const r = lv[py * N + px + 1];
+        const b = lv[(py + 1) * N + px];
+        if (a === r && a === b) continue;
+        // the level being crossed
+        const level = Math.max(a, r, b);
+        const index = level % INDEX_EVERY === 0;
+        const onMap = level % CONTOUR_SPLIT === 0;
         const o = (py * S + px) * 4;
-        if (lvl > 0) {
-          d[o] = 255;
-          d[o + 1] = 248;
-          d[o + 2] = 210;
-          d[o + 3] = Math.round((lvl / SHADE_LEVELS) * 0.24 * 255);
-        } else if (lvl < 0) {
-          d[o] = 12;
-          d[o + 1] = 16;
-          d[o + 2] = 42;
-          d[o + 3] = Math.round((-lvl / SHADE_LEVELS) * 0.5 * 255);
-        } else d[o + 3] = 0;
+        d[o] = 120;
+        d[o + 1] = 62;
+        d[o + 2] = 18;
+        d[o + 3] = index ? 175 : onMap ? 115 : 70;
+        if (index && px + 1 < S) {
+          // index contours are two pixels wide
+          d[o + 4] = 120;
+          d[o + 5] = 62;
+          d[o + 6] = 18;
+          d[o + 7] = 175;
+        }
       }
     }
-    const sc = this.shadeCanvas.getContext("2d")!;
-    sc.putImageData(img, 0, 0);
-    g.drawImage(this.shadeCanvas, 0, 0);
+    this.lineCanvas.getContext("2d")!.putImageData(this.lineImg, 0, 0);
+    g.drawImage(this.lineCanvas, 0, 0);
+  }
+
+  /** Perspective factor for a point h metres above the ground at (x, y): higher = closer = bigger and further out. */
+  private persp(x: number, y: number, eyeH: number, h: number): { lean: number; size: number } {
+    // terrain height of the base relative to the runner's eye level
+    const dh = Math.max(-CAM_H * 0.6, Math.min(CAM_H * 0.4, heightAt(this.world.height, x, y) - eyeH));
+    const top = CAM_H - dh - h;
+    // full perspective of the top (strong uphill) vs. the lean over its own base (never < 1, so
+    // downhill the crowns still lean outwards instead of being pulled towards the runner)
+    const full = CAM_H / top;
+    const own = (CAM_H - dh) / top;
+    return {
+      lean: Math.min(PERSP_MAX, Math.max(full, own)),
+      // size: higher terrain = closer = bigger, but capped lower so a crown never hides its lean
+      size: Math.max(PERSP_MIN, Math.min(SIZE_MAX, full)),
+    };
   }
 
   /** World → buffer coordinates for the current camera. */
@@ -318,11 +360,13 @@ export class GameView {
 
     // course markers (upright on screen)
     const course = w.course;
+    const eyeH = heightAt(w.height, p.x, p.y);
     const marker = (img: HTMLImageElement, x: number, y: number, ax: number, ay: number) => {
-      const [sx, sy] = this.toScreen(p, x, y);
+      const { lean, size: z } = this.persp(x, y, eyeH, FLAG_H);
+      const [sx, sy] = this.toScreen(p, p.x + (x - p.x) * lean, p.y + (y - p.y) * lean);
       if (sx < -20 || sy < -20 || sx > BUF_W + 20 || sy > BUF_H + 20) return null;
-      b.drawImage(img, Math.round(sx - ax), Math.round(sy - ay));
-      return [sx, sy] as const;
+      b.drawImage(img, Math.round(sx - ax * z), Math.round(sy - ay * z), Math.round(img.width * z), Math.round(img.height * z));
+      return [sx, sy - (z - 1) * ay] as const;
     };
     marker(sp.start, course.start.x, course.start.y, 7, 7);
     const labels: [number, number, string][] = [];
@@ -350,18 +394,35 @@ export class GameView {
     b.rotate(-p.heading);
     b.scale(PX, PX);
     b.translate(-p.x, -p.y);
+    // parallax: each crown sits above its trunk and leans away from the camera axis
+    type Crown = { tx: number; ty: number; x: number; y: number; z: number; img: HTMLImageElement };
+    const crowns: Crown[] = [];
     for (const c of visible) {
       const t = c.trees;
       for (let n = 0; n < t.length; n += 3) {
-        const x = t[n] + 0.5;
-        const y = t[n + 1] + 0.5;
-        const dx = x - p.x;
-        const dy = y - p.y;
-        if (dx * dx + dy * dy > VIEW_R * VIEW_R) continue;
-        const img = sp[TREE_SPRITE[t[n + 2] - Obj.Tree1]];
-        b.globalAlpha = dx * dx + dy * dy < 2.6 ? 0.45 : 1;
-        b.drawImage(img, x - img.width / PX / 2, y - img.height / PX / 2, img.width / PX, img.height / PX);
+        const tx = t[n] + 0.5;
+        const ty = t[n + 1] + 0.5;
+        if ((tx - p.x) ** 2 + (ty - p.y) ** 2 > VIEW_R * VIEW_R) continue;
+        const kind = t[n + 2] - Obj.Tree1;
+        const { lean, size } = this.persp(tx, ty, eyeH, CANOPY_H[kind]);
+        crowns.push({ tx, ty, x: p.x + (tx - p.x) * lean, y: p.y + (ty - p.y) * lean, z: size, img: sp[TREE_SPRITE[kind]] });
       }
+    }
+    // trunks first (seen at an angle they run from the base to the crown), then all crowns on top
+    b.strokeStyle = "#2b1d12";
+    b.lineWidth = 0.35;
+    b.beginPath();
+    for (const c of crowns) {
+      if ((c.x - c.tx) ** 2 + (c.y - c.ty) ** 2 < 0.01) continue;
+      b.moveTo(c.tx, c.ty);
+      b.lineTo(c.x, c.y);
+    }
+    b.stroke();
+    for (const c of crowns) {
+      b.globalAlpha = (c.x - p.x) ** 2 + (c.y - p.y) ** 2 < 2.6 ? 0.45 : 1;
+      const sw = (c.img.width / PX) * c.z;
+      const sh = (c.img.height / PX) * c.z;
+      b.drawImage(c.img, c.x - sw / 2, c.y - sh / 2, sw, sh);
     }
     b.globalAlpha = 1;
     b.restore();

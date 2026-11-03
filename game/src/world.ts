@@ -48,16 +48,13 @@ export interface World {
   veg: Uint8Array;
   obj: Uint8Array;
   solid: Uint8Array;
-  /** Hill shading incl. cast shadows, -100..100 (low sun in the north-west). */
+  /** Hill shading, -100..100 (light from the north-west). */
   shade: Int8Array;
   height: HeightGrid;
+  /** Contour interval of the printed map, metres (drawn as isolines in the world too). */
+  contourInterval: number;
   course: Course;
 }
-
-/** Sun elevation for cast shadows: tan(≈12°) — low sun, long shadows behind hills. */
-const SUN_TAN = 0.21;
-/** How much a cast shadow darkens (on the −100..100 shade scale). */
-const SHADOW_DARK = 48;
 
 /** Ground speed factors (1 = open land). */
 export const GROUND_SPEED: Record<string, number> = {
@@ -273,7 +270,7 @@ function stampLine(pts: Pt[], width: number, w: number, h: number, fn: (i: numbe
 }
 
 // ---------------------------------------------------------------- build
-export function buildWorld(model: MapModel, height: HeightGrid): World {
+export function buildWorld(model: MapModel, height: HeightGrid, contourInterval = 5): World {
   if (!model.course) throw new Error("Карта без дистанції");
   const w = Math.ceil(model.widthM);
   const h = Math.ceil(model.heightM);
@@ -504,33 +501,16 @@ export function buildWorld(model: MapModel, height: HeightGrid): World {
   // Hill shading from the terrain height field.
   const hs = new Float32Array(N);
   for (let j = 0; j < h; j++) for (let i = 0; i < w; i++) hs[j * w + i] = heightAt(height, i + 0.5, j + 0.5);
-  // Cast shadows: a low sun in the north-west. The sun ray runs along the (+1, +1) diagonal, so the
-  // horizon can be propagated cell by cell: H = max(height, H) of the NW neighbour, minus the drop
-  // of the ray over one diagonal step. A cell lies in shadow where that horizon is above it.
-  const drop = Math.SQRT2 * SUN_TAN;
-  const horizon = new Float32Array(N).fill(-Infinity);
-  const shadow = new Float32Array(N);
-  for (let j = 1; j < h; j++) {
-    for (let i = 1; i < w; i++) {
-      const k = j * w + i;
-      const nw = k - w - 1;
-      const hz = Math.max(hs[nw], horizon[nw]) - drop;
-      horizon[k] = hz;
-      // soft-ish edge: full shadow 1.2 m below the horizon
-      shadow[k] = Math.max(0, Math.min(1, (hz - hs[k]) / 1.2));
-    }
-  }
   const shade = new Int8Array(N);
   for (let j = 0; j < h; j++) {
     for (let i = 0; i < w; i++) {
       const gx = (hs[j * w + Math.min(w - 1, i + 2)] - hs[j * w + Math.max(0, i - 2)]) / 4;
       const gy = (hs[Math.min(h - 1, j + 2) * w + i] - hs[Math.max(0, j - 2) * w + i]) / 4;
-      const lit = -(gx + gy) * 250;
-      shade[j * w + i] = Math.max(-100, Math.min(100, Math.round(lit - shadow[j * w + i] * SHADOW_DARK)));
+      shade[j * w + i] = Math.max(-100, Math.min(100, Math.round(-(gx + gy) * 380)));
     }
   }
 
-  return { w, h, ground, veg, obj, solid, shade, height, course: c };
+  return { w, h, ground, veg, obj, solid, shade, height, contourInterval, course: c };
 }
 
 /** Terrain height at world coordinates (bilinear). */

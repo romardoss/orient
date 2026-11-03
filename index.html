@@ -94,6 +94,41 @@
         <div id="map-hint">колесо — масштаб · тягни — зсув · +/− · F — уся карта</div>
       </div>
     </div>
+    <script>
+      // Boot guard (plain script, runs even when the game module can't load): the loading line must
+      // end in "Помилка: …" instead of hanging on "…".
+      (function () {
+        var stage = document.getElementById("loading-stage");
+        var loading = document.getElementById("loading");
+        var hint =
+          location.protocol === "file:"
+            ? " Сторінку відкрито як файл — браузер блокує модулі. Запустіть через сервер: npm run game (або npx vite preview після npm run build)."
+            : "";
+        function fail(msg) {
+          if (loading.style.display === "none" || /^Помилка:/.test(stage.textContent)) return;
+          stage.textContent = "Помилка: " + msg + hint;
+        }
+        window.__orientFail = fail;
+        // resource load failures (script / module imports) don't bubble — catch them in the capture phase
+        window.addEventListener(
+          "error",
+          function (e) {
+            var t = e.target;
+            if (t && t !== window && (t.src || t.href)) fail("не вдалося завантажити " + (t.src || t.href));
+            else fail(e.message || "невідома помилка скрипту");
+          },
+          true,
+        );
+        window.addEventListener("unhandledrejection", function (e) {
+          var r = e.reason;
+          fail((r && r.message) || String(r));
+        });
+        // the module never started at all (blocked, 404, wrong MIME type…)
+        setTimeout(function () {
+          if (!window.__orientStarted) fail("гра не запустилася (скрипт гри не завантажився).");
+        }, 6000);
+      })();
+    </script>
     <script type="module" src="./game/src/main.ts"></script>
   </body>
 </html>

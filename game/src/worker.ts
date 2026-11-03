@@ -63,9 +63,10 @@ self.onmessage = async (ev: MessageEvent<GenRequest>) => {
 
     post({ type: "stage", stage: "world" });
     const hg = fields.height;
-    const world = buildWorld(model, { nx: hg.nx, ny: hg.ny, cell: hg.cell, data: hg.data });
+    const world = buildWorld(model, { nx: hg.nx, ny: hg.ny, cell: hg.cell, data: hg.data }, p.contourInterval);
     post({ type: "done", svg, world }, [world.ground.buffer, world.veg.buffer, world.obj.buffer, world.solid.buffer, world.shade.buffer]);
   } catch (e) {
-    post({ type: "error", message: e instanceof Error ? (e.stack ?? e.message) : String(e) });
+    console.error(e); // full stack in the devtools console; the loading line gets the message only
+    post({ type: "error", message: e instanceof Error ? e.message : String(e) });
   }
 };

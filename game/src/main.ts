@@ -53,6 +53,9 @@ const params: MapParams = {
 params.vegetation = Math.round(params.vegetation * 0.6 * 20) / 20;
 params.water = Math.round(params.water * 0.7 * 20) / 20;
 
+// Tell the boot guard in index.html that the module is running.
+(window as unknown as { __orientStarted?: boolean }).__orientStarted = true;
+
 // ---------------------------------------------------------------- DOM
 const gameCanvas = document.getElementById("game") as HTMLCanvasElement;
 const mapCanvas = document.getElementById("map") as HTMLCanvasElement;
@@ -77,7 +80,22 @@ function generate(): Promise<{ svg: string; world: World }> {
         resolve(m);
       }
     };
-    worker.onerror = (e) => reject(new Error(e.message));
+    // A module worker that fails to load reports an ErrorEvent without a message.
+    worker.onerror = (e) => {
+      e.preventDefault();
+      reject(new Error(e.message || "не вдалося запустити генератор карти (Web Worker)"));
+    };
+    worker.onmessageerror = () => reject(new Error("пошкоджені дані від генератора карти"));
+    // If the worker never answers at all, don't hang on "…" forever.
+    let heard = false;
+    const onFirst = worker.onmessage;
+    worker.onmessage = (ev) => {
+      heard = true;
+      onFirst!.call(worker, ev);
+    };
+    setTimeout(() => {
+      if (!heard) reject(new Error("генератор карти не відповідає"));
+    }, 20000);
     // The symbol library is served from the site root, next to index.html.
     const req: GenRequest = { params, assetRoot: new URL("./", location.href).href };
     worker.postMessage(req);
