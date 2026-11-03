@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Генератор карт для орієнтування</title>
+    <link rel="icon" href="isom-2017-2/svg/703.svg" />
+  </head>
+  <body>
+    <header class="top">
+      <h1><img class="logo" src="isom-2017-2/svg/701.svg" alt="" />Orient · символи ISOM</h1>
+      <nav>
+        <a href="index.html">Гра</a>
+        <a href="generator.html" class="active">Генератор карт</a>
+        <a href="catalog.html">Каталог символів</a>
+      </nav>
+    </header>
+    <main class="gen">
+      <aside class="left">
+        <form id="params" autocomplete="off">
+          <fieldset>
+            <legend>Місцевість</legend>
+            <label class="row">Пресет
+              <select name="preset"></select>
+            </label>
+            <label class="row">Seed
+              <span class="seed"><input type="number" name="seed" /><button type="button" id="dice" title="Випадковий seed">↻</button></span>
+            </label>
+            <label class="row">Перепад висот, м <output data-for="relief"></output>
+              <input type="range" name="relief" min="8" max="180" step="1" />
+            </label>
+            <label class="row">Дрібний рельєф <output data-for="detail"></output>
+              <input type="range" name="detail" min="0" max="1" step="0.05" />
+            </label>
+            <label class="row">Скелі та каміння <output data-for="rock"></output>
+              <input type="range" name="rock" min="0" max="1" step="0.05" />
+            </label>
+            <label class="row">Вода: озера, болота, струмки <output data-for="water"></output>
+              <input type="range" name="water" min="0" max="1" step="0.05" />
+            </label>
+            <label class="row">Річки <output data-for="river"></output>
+              <input type="range" name="river" min="0" max="1" step="0.05" title="0 — без річки; до 0.4 — мілка річка, яку можна перейти вбрід; більше — широка неперехідна річка з мостами; від 0.6 — ще й притока" />
+            </label>
+            <label class="row">Відкриті ділянки <output data-for="open"></output>
+              <input type="range" name="open" min="0" max="1" step="0.05" />
+            </label>
+            <label class="row">Зелень (прохідність) <output data-for="vegetation"></output>
+              <input type="range" name="vegetation" min="0" max="1" step="0.05" />
+            </label>
+            <label class="row">Дороги та стежки <output data-for="paths"></output>
+              <input type="range" name="paths" min="0" max="1" step="0.05" />
+            </label>
+            <label class="row">Будівлі та огорожі <output data-for="manmade"></output>
+              <input type="range" name="manmade" min="0" max="1" step="0.05" title="Хутори, хатинки, руїни, паркани, мури, загони, просіки, поля, сади, вишки" />
+            </label>
+            <button type="button" id="randomMap" class="random" title="Новий seed і випадкові значення всіх параметрів місцевості">🎲 Випадкова карта</button>
+          </fieldset>
+          <fieldset>
+            <legend>Аркуш</legend>
+            <label class="row">Назва <input type="text" name="title" /></label>
+            <label class="row">Масштаб
+              <select name="scale"><option value="10000">1:10 000</option><option value="15000">1:15 000</option></select>
+            </label>
+            <label class="row">Формат
+              <select name="paper">
+                <option value="297x210">A4 альбомний</option>
+                <option value="210x297">A4 книжковий</option>
+                <option value="420x297">A3 альбомний</option>
+                <option value="297x420">A3 книжковий</option>
+              </select>
+            </label>
+            <label class="row">Розмір знаків, × <output data-for="symbolSize"></output>
+              <input type="range" name="symbolSize" min="1" max="2" step="0.05" title="Збільшення умовних знаків карти відносно стандарту ISOM для кращої читабельності (кружки КП не змінюються)" />
+            </label>
+            <label class="row">Висота перерізу
+              <select name="contourInterval"><option value="5">5 м</option><option value="2.5">2.5 м</option></select>
+            </label>
+          </fieldset>
+          <fieldset>
+            <legend>Дистанція</legend>
+            <label class="check"><input type="checkbox" name="courseEnabled" /> Поставити дистанцію</label>
+            <label class="check"><input type="checkbox" name="courseLegs" /> Лінії між КП (без них — лише кружки й номери)</label>
+            <label class="row">Назва <input type="text" name="courseName" /></label>
+            <label class="row">Кількість КП <output data-for="controls"></output>
+              <input type="range" name="controls" min="3" max="25" step="1" />
+            </label>
+            <label class="row">Довжина, км <output data-for="lengthKm"></output>
+              <input type="range" name="lengthKm" min="1" max="12" step="0.1" />
+            </label>
+          </fieldset>
+          <fieldset>
+            <legend>Відображення</legend>
+            <label class="row">Кольори
+              <select name="palette"><option value="print">Друкарські фарби</option><option value="mapper">OpenOrienteering Mapper</option></select>
+            </label>
+            <label class="check"><input type="checkbox" name="overprint" /> Накладка фіолетового (multiply)</label>
+            <label class="check"><input type="checkbox" name="showSheet" /> Легенда КП на карті</label>
+            <label class="check"><input type="checkbox" name="showTitle" /> Блок з назвою</label>
+          </fieldset>
+          <button type="submit" class="primary" id="generate">Згенерувати</button>
+        </form>
+      </aside>
+      <section class="viewer" id="viewer">
+        <img id="map" alt="Згенерована карта" draggable="false" />
+        <div class="status" id="status">Завантаження символів…</div>
+        <div class="zoom">
+          <button type="button" id="zoomIn" title="Наблизити">+</button>
+          <button type="button" id="zoomOut" title="Віддалити">−</button>
+          <button type="button" id="zoomFit" title="Вмістити">⤢</button>
+        </div>
+      </section>
+      <aside class="right">
+        <fieldset>
+          <legend>Експорт</legend>
+          <div class="buttons">
+            <button type="button" id="dlSvg">SVG карти</button>
+            <button type="button" id="dlPng">PNG 300 dpi</button>
+            <button type="button" id="dlSheet">SVG легенди</button>
+            <button type="button" id="print">Друк</button>
+          </div>
+          <p class="hint">Посилання на цю карту — у адресному рядку: ті самі параметри дають ту саму карту.</p>
+        </fieldset>
+        <fieldset>
+          <legend>Пакет карт (PDF)</legend>
+          <label class="row">Кількість карт
+            <input type="number" id="batchCount" min="1" max="100" value="10" />
+          </label>
+          <label class="row">Якість
+            <select id="batchDpi">
+              <option value="150">150 dpi (менший файл)</option>
+              <option value="200" selected>200 dpi</option>
+              <option value="300">300 dpi (для друку)</option>
+            </select>
+          </label>
+          <div class="buttons">
+            <button type="button" id="batchPdf" class="random" title="Кожна карта — випадковий seed і випадкова місцевість; формат, масштаб і дистанція — з форми">📄 Згенерувати PDF</button>
+            <button type="button" id="batchCancel" hidden>Скасувати</button>
+          </div>
+          <progress id="batchProgress" max="1" value="0" hidden></progress>
+          <p class="hint" id="batchInfo">Кожна сторінка — нова випадкова карта (місцевість і seed). Формат аркуша, масштаб і дистанція беруться з форми.</p>
+        </fieldset>
+        <fieldset>
+          <legend>Легенда КП (IOF)</legend>
+          <div class="sheet"><img id="sheet" alt="Легенда контрольних пунктів" /></div>
+          <ol class="desc-list" id="descList"></ol>
+        </fieldset>
+        <fieldset>
+          <legend>Статистика</legend>
+          <div class="stats" id="stats"></div>
+        </fieldset>
+      </aside>
+    </main>
+    <script type="module" src="/src/app/generator-ui.ts"></script>
+  </body>
+</html>

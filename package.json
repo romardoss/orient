@@ -1,0 +1,27 @@
+{
+  "name": "orient-symbols",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "IOF orienteering map symbols (ISOM 2017-2, ISSprOM 2019-2, control descriptions) as SVG/PNG assets, plus a procedural orienteering map generator.",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "assets": "vite-node tools/build-assets.ts",
+    "map": "vite-node tools/generate-map.ts --",
+    "game": "vite --open /",
+    "generator": "vite --open /generator.html"
+  },
+  "devDependencies": {
+    "@types/node": "22.20.5",
+    "@xmldom/xmldom": "0.9.8",
+    "sharp": "0.34.5",
+    "typescript": "5.9.3",
+    "vite": "7.3.7",
+    "vite-node": "3.2.4",
+    "vitest": "3.2.7"
+  }
+}

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Каталог символів ISOM / ISSprOM / IOF</title>
+    <link rel="icon" href="isom-2017-2/svg/703.svg" />
+  </head>
+  <body>
+    <header class="top">
+      <h1><img class="logo" src="isom-2017-2/svg/701.svg" alt="" />Orient · символи ISOM</h1>
+      <nav>
+        <a href="index.html">Гра</a>
+        <a href="generator.html">Генератор карт</a>
+        <a href="catalog.html" class="active">Каталог символів</a>
+      </nav>
+    </header>
+    <main class="catalog">
+      <div class="toolbar">
+        <div class="tabs" id="tabs"></div>
+        <input type="search" id="search" placeholder="Пошук за кодом або назвою…" />
+        <select id="lang" title="Мова назв легенд КП" hidden></select>
+        <label class="check"><input type="checkbox" id="showHidden" /> Службові</label>
+      </div>
+      <p class="set-info" id="info"></p>
+      <div class="grid" id="grid"></div>
+      <footer class="attrib">
+        Символи ISOM 2017-2, ISSprOM 2019-2 та курсові символи згенеровано з визначень
+        <a href="https://github.com/OpenOrienteering/mapper/tree/master/symbol%20sets">OpenOrienteering Mapper</a> (GPL-3.0).
+        Символи легенд КП — з <a href="https://github.com/petergolde/PurplePen">Purple Pen</a> (© Peter Golde, BSD-ліцензія).
+        Специфікації: International Orienteering Federation.
+      </footer>
+    </main>
+    <dialog id="dialog"></dialog>
+    <script type="module" src="/src/app/catalog-ui.ts"></script>
+  </body>
+</html>

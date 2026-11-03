@@ -1,0 +1,3365 @@
+{
+ "set": "ISOM 2017-2",
+ "title": "ISOM 2017-2 (forest, 1:15 000)",
+ "scale": 15000,
+ "source": "https://github.com/OpenOrienteering/mapper/tree/master/symbol%20sets/src",
+ "license": "GPL-3.0-or-later (derived from OpenOrienteering Mapper symbol sets)",
+ "colors": [
+  {
+   "index": 0,
+   "priority": 0,
+   "name": "Purple for course overprint",
+   "rgb": "#97218b",
+   "mapperRgb": "#a626ff",
+   "cmyk": [
+    0.35,
+    0.85,
+    0,
+    0
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 1,
+   "priority": 1,
+   "name": "White for course overprint",
+   "rgb": "#ffffff",
+   "mapperRgb": "#ffffff",
+   "cmyk": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 2,
+   "priority": 2,
+   "name": "Black 100%",
+   "rgb": "#231f20",
+   "mapperRgb": "#000000",
+   "cmyk": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 3,
+   "priority": 3,
+   "name": "Green 100%",
+   "rgb": "#3dab15",
+   "mapperRgb": "#3dff17",
+   "cmyk": [
+    0.76,
+    0,
+    0.91,
+    0
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 4,
+   "priority": 4,
+   "name": "White for railway",
+   "rgb": "#ffffff",
+   "mapperRgb": "#ffffff",
+   "cmyk": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 5,
+   "priority": 5,
+   "name": "Blue 100%",
+   "rgb": "#00a0e3",
+   "mapperRgb": "#00ffff",
+   "cmyk": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 6,
+   "priority": 6,
+   "name": "Brown 100%",
+   "rgb": "#cb5800",
+   "mapperRgb": "#d15c00",
+   "cmyk": [
+    0,
+    0.56,
+    1,
+    0.18
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 7,
+   "priority": 7,
+   "name": "Purple for track symbols",
+   "rgb": "#97218b",
+   "mapperRgb": "#a626ff",
+   "cmyk": [
+    0.35,
+    0.85,
+    0,
+    0
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 8,
+   "priority": 8,
+   "name": "Black below purple for track symbols",
+   "rgb": "#231f20",
+   "mapperRgb": "#000000",
+   "cmyk": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 9,
+   "priority": 9,
+   "name": "Black 65%",
+   "rgb": "#706d6e",
+   "mapperRgb": "#595959",
+   "cmyk": [
+    0,
+    0,
+    0,
+    0.65
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 10,
+   "priority": 10,
+   "name": "Black 20%",
+   "rgb": "#d3d2d2",
+   "mapperRgb": "#cccccc",
+   "cmyk": [
+    0,
+    0,
+    0,
+    0.2
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 11,
+   "priority": 11,
+   "name": "Upper brown 50%",
+   "rgb": "#e4a365",
+   "mapperRgb": "#e8ad80",
+   "cmyk": [
+    0,
+    0.28,
+    0.5,
+    0.09
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 12,
+   "priority": 12,
+   "name": "Black below upper brown 50%",
+   "rgb": "#231f20",
+   "mapperRgb": "#000000",
+   "cmyk": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 13,
+   "priority": 13,
+   "name": "Lower brown 50%",
+   "rgb": "#e4a365",
+   "mapperRgb": "#e8ad80",
+   "cmyk": [
+    0,
+    0.28,
+    0.5,
+    0.09
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 14,
+   "priority": 14,
+   "name": "Black below lower brown 50%",
+   "rgb": "#231f20",
+   "mapperRgb": "#000000",
+   "cmyk": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 15,
+   "priority": 15,
+   "name": "Blue 100% for area features",
+   "rgb": "#00a0e3",
+   "mapperRgb": "#00ffff",
+   "cmyk": [
+    1,
+    0,
+    0,
+    0
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 16,
+   "priority": 16,
+   "name": "Blue 70%",
+   "rgb": "#4dbdeb",
+   "mapperRgb": "#4dffff",
+   "cmyk": [
+    0.7,
+    0,
+    0,
+    0
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 17,
+   "priority": 17,
+   "name": "Blue 50%",
+   "rgb": "#80d0f1",
+   "mapperRgb": "#80ffff",
+   "cmyk": [
+    0.5,
+    0,
+    0,
+    0
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 18,
+   "priority": 18,
+   "name": "OpenOrienteering Orange",
+   "rgb": "#e07413",
+   "mapperRgb": "#e87f1b",
+   "cmyk": [
+    0,
+    0.474,
+    0.895,
+    0.09
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 19,
+   "priority": 19,
+   "name": "Yellow 100% for narrow ride",
+   "rgb": "#f8b02e",
+   "mapperRgb": "#ffba36",
+   "cmyk": [
+    0,
+    0.27,
+    0.79,
+    0
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 20,
+   "priority": 20,
+   "name": "Green 60% for narrow ride",
+   "rgb": "#8bcc6e",
+   "mapperRgb": "#8bff74",
+   "cmyk": [
+    0.456,
+    0,
+    0.546,
+    0
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 21,
+   "priority": 21,
+   "name": "Green 30% for narrow ride",
+   "rgb": "#c5e5b5",
+   "mapperRgb": "#c5ffb9",
+   "cmyk": [
+    0.228,
+    0,
+    0.273,
+    0
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 22,
+   "priority": 22,
+   "name": "White over green",
+   "rgb": "#ffffff",
+   "mapperRgb": "#ffffff",
+   "cmyk": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 23,
+   "priority": 23,
+   "name": "Yellow 100%/Green 50%",
+   "rgb": "#9a9618",
+   "mapperRgb": "#9eba1d",
+   "cmyk": [
+    0.38,
+    0.27,
+    0.886,
+    0
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 24,
+   "priority": 24,
+   "name": "Black 25% (Grey)",
+   "rgb": "#c8c7c7",
+   "mapperRgb": "#bfbfbf",
+   "cmyk": [
+    0,
+    0,
+    0,
+    0.25
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 25,
+   "priority": 25,
+   "name": "Green 100%/Black 50%",
+   "rgb": "#23600c",
+   "mapperRgb": "#1f800b",
+   "cmyk": [
+    0.76,
+    0,
+    0.91,
+    0.5
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 26,
+   "priority": 26,
+   "name": "Green 100% for area features",
+   "rgb": "#3dab15",
+   "mapperRgb": "#3dff17",
+   "cmyk": [
+    0.76,
+    0,
+    0.91,
+    0
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 27,
+   "priority": 27,
+   "name": "Green 60%",
+   "rgb": "#8bcc6e",
+   "mapperRgb": "#8bff74",
+   "cmyk": [
+    0.456,
+    0,
+    0.546,
+    0
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 28,
+   "priority": 28,
+   "name": "Green 30%",
+   "rgb": "#c5e5b5",
+   "mapperRgb": "#c5ffb9",
+   "cmyk": [
+    0.228,
+    0,
+    0.273,
+    0
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 29,
+   "priority": 29,
+   "name": "Green 100% for undergrowth",
+   "rgb": "#3dab15",
+   "mapperRgb": "#3dff17",
+   "cmyk": [
+    0.76,
+    0,
+    0.91,
+    0
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 30,
+   "priority": 30,
+   "name": "White over yellow",
+   "rgb": "#ffffff",
+   "mapperRgb": "#ffffff",
+   "cmyk": [
+    0,
+    0,
+    0,
+    0
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 31,
+   "priority": 31,
+   "name": "Black for open land",
+   "rgb": "#231f20",
+   "mapperRgb": "#000000",
+   "cmyk": [
+    0,
+    0,
+    0,
+    1
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 32,
+   "priority": 32,
+   "name": "Yellow",
+   "rgb": "#f8b02e",
+   "mapperRgb": "#ffba36",
+   "cmyk": [
+    0,
+    0.27,
+    0.79,
+    0
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 33,
+   "priority": 33,
+   "name": "Yellow 100% for area features",
+   "rgb": "#f8b02e",
+   "mapperRgb": "#ffba36",
+   "cmyk": [
+    0,
+    0.27,
+    0.79,
+    0
+   ],
+   "opacity": 1
+  },
+  {
+   "index": 34,
+   "priority": 34,
+   "name": "Yellow 50%",
+   "rgb": "#fbd690",
+   "mapperRgb": "#ffdd9a",
+   "cmyk": [
+    0,
+    0.135,
+    0.395,
+    0
+   ],
+   "opacity": 1
+  },
+  {
+   "index": -900,
+   "priority": -1,
+   "name": "Registration black",
+   "rgb": "#000000",
+   "mapperRgb": "#000000",
+   "cmyk": [
+    1,
+    1,
+    1,
+    1
+   ],
+   "opacity": 1
+  }
+ ],
+ "symbols": [
+  {
+   "code": "101",
+   "id": 0,
+   "name": "Contour",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "A line joining points of equal height. The standard vertical interval between contours is 5 m. A contour interval of 2.5 m may be used for flat terrains.\nSlope lines may be drawn on the lower side of a contour line to clarify the direction of slope. When used, they should be placed in re-entrants.\nA closed contour represents a knoll or a depression. A depression has to have at least one slope line. Minimum height/depth should be 1 m.\nRelationships between adjacent contour lines are important. Adjacent contour lines show form and structure. Small details on contours should be avoided because they tend to hide the main features of the terrain.\nProminent features such as depressions, re-entrants, spurs, earth banks and terraces may have to be exaggerated.\nAbsolute height accuracy is of little importance, but the relative height difference between neighbouring features should be represented on the map as accurately as possible. It is permissible to alter the height of a contour slightly if this improves the representation of a feature. This deviation should not exceed 25% of the contour interval, and attention must be paid to neighbouring features.\nThe smallest bend in a contour line is 0.25 mm from centre to centre of the line (footprint 4 m). The mouth of a re-entrant or a spur must be wider than 0.5 mm from centre to centre of the line (footprint 8 m).\nThe minimum length of a contour knoll is 0.9 mm (footprint 13.5 m) and the minimum width is 0.6 mm (footprint 9 m) outside measure. Smaller prominent knolls can be represented using symbol Small knoll (109) or Small elongated knoll (110) or they can be exaggerated on the map to satisfy the minimum dimension.\nA depression must accommodate a slope line, so the minimum length is 1.1 mm (footprint 16.5 m) and the minimum width is 0.7 mm (footprint 10.5 m) outside measure. Smaller, prominent depressions can be represented using symbol Small depression (111) or they can be exaggerated to satisfy the minimum dimension.\nContours should be adapted (not broken) in order not to touch symbol Small knoll (109) or Small elongated knoll (110).",
+   "files": {
+    "svg": "svg/101.svg",
+    "svgTrueSize": "svg-true-size/101.svg",
+    "png": "png/101.png",
+    "sprite": "sprite.svg#isom-2017-2-101"
+   }
+  },
+  {
+   "code": "101.1",
+   "id": 1,
+   "name": "Slope line, contour",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "Slope lines may be drawn on the lower side of a contour line to clarify the direction of slope. When used, they should be placed in re-entrants.\nA depression has to have at least one slope line.",
+   "files": {
+    "svg": "svg/101.1.svg",
+    "svgTrueSize": "svg-true-size/101.1.svg",
+    "png": "png/101.1.png",
+    "sprite": "sprite.svg#isom-2017-2-101.1"
+   }
+  },
+  {
+   "code": "102",
+   "id": 2,
+   "name": "Index contour",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "Every fifth contour shall be drawn with a thicker line. This is an aid to the quick assessment of height difference and the overall shape of the terrain surface.\nAn index contour may be represented as an ordinary contour line in an area with much detail. Small contour knolls and depressions are normally not represented using index contours.\nThe index contour level must be carefully selected in flat terrain. The ideal level for the index contour is the central contour in the most prominent slopes.",
+   "files": {
+    "svg": "svg/102.svg",
+    "svgTrueSize": "svg-true-size/102.svg",
+    "png": "png/102.png",
+    "sprite": "sprite.svg#isom-2017-2-102"
+   }
+  },
+  {
+   "code": "102.1",
+   "id": 3,
+   "name": "Contour value",
+   "type": "text",
+   "shape": "text",
+   "hidden": false,
+   "description": "An index contour may have a height value assigned. A height value should only be inserted in an index contour in places where other detail is not obscured. It shall be orientated so that the top of the label is on the higher side of the contour. The index value (label) shall be 1.5 mm high and represented in a sans-serif font.",
+   "files": {
+    "svg": "svg/102.1.svg",
+    "svgTrueSize": "svg-true-size/102.1.svg",
+    "png": "png/102.1.png",
+    "sprite": "sprite.svg#isom-2017-2-102.1"
+   }
+  },
+  {
+   "code": "103",
+   "id": 4,
+   "name": "Form line",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "Form lines are used where more information must be given about the shape of the ground. Form lines are added only where representation would be incomplete with ordinary contours. They shall not be used as intermediate contours. Only one form line should be used between neighbouring contours. It is very important that a form line fits logically into the contour system, so the start and end of a form line should be parallel to the neighbouring contours. The gaps between the form line dashes must be placed on reasonably straight sections of the form line. Form lines can be used to differentiate flat knolls and depressions from more distinct ones (minimum height / depth should be 1 m). Excessive use of form lines must be avoided as this disturbs the three-dimensional picture of the ground shape and will complicate map reading.\nMinimum length (non-closed): two dashes.\nMinimum length of a form line, knoll or depression: 1.1 mm (footprint 16.5 m)",
+   "files": {
+    "svg": "svg/103.svg",
+    "svgTrueSize": "svg-true-size/103.svg",
+    "png": "png/103.png",
+    "sprite": "sprite.svg#isom-2017-2-103"
+   }
+  },
+  {
+   "code": "103.1",
+   "id": 5,
+   "name": "Slope line, formline",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "Slope lines may be drawn on the lower side of a contour line to clarify the direction of slope. When used, they should be placed in re-entrants.",
+   "files": {
+    "svg": "svg/103.1.svg",
+    "svgTrueSize": "svg-true-size/103.1.svg",
+    "png": "png/103.1.png",
+    "sprite": "sprite.svg#isom-2017-2-103.1"
+   }
+  },
+  {
+   "code": "104",
+   "id": 6,
+   "name": "Earth bank",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "An earth bank is an abrupt change in ground level which can be clearly distinguished from its surroundings, e.g. gravel or sand pits, road and railway cuttings or embankments.\nMinimum height: 1 m. An earth bank may impact runnability. The tags represent the full extent of the earth bank.\nFor long earth banks it is allowed to use tags shorter than the minimum length at the ends. If two earth banks are close together, tags may be omitted. Impassable earth banks shall be represented using symbol impassable cliff (201).\nMinimum length: 0.6 mm (footprint 9 m).",
+   "files": {
+    "svg": "svg/104.svg",
+    "svgTrueSize": "svg-true-size/104.svg",
+    "png": "png/104.png",
+    "sprite": "sprite.svg#isom-2017-2-104"
+   }
+  },
+  {
+   "code": "104.1",
+   "id": 7,
+   "name": "Earth bank, minimum size",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "An earth bank is an abrupt change in ground level which can be clearly distinguished from its surroundings, e.g. gravel or sand pits, road and railway cuttings or embankments.\nMinimum height: 1 m. An earth bank may impact runnability. The tags represent the full extent of the earth bank.\nFor long earth banks it is allowed to use tags shorter than the minimum length at the ends. If two earth banks are close together, tags may be omitted. Impassable earth banks shall be represented using symbol impassable cliff (201).\nMinimum length: 0.6 mm (footprint 9 m).",
+   "files": {
+    "svg": "svg/104.1.svg",
+    "svgTrueSize": "svg-true-size/104.1.svg",
+    "png": "png/104.1.png",
+    "sprite": "sprite.svg#isom-2017-2-104.1"
+   }
+  },
+  {
+   "code": "104.2",
+   "id": 8,
+   "name": "Earth bank, top line",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "An earth bank is an abrupt change in ground level which can be clearly distinguished from its surroundings, e.g. gravel or sand pits, road and railway cuttings or embankments.\nMinimum height: 1 m. An earth bank may impact runnability. The tags represent the full extent of the earth bank.\nFor long earth banks it is allowed to use tags shorter than the minimum length at the ends. If two earth banks are close together, tags may be omitted. Impassable earth banks shall be represented using symbol impassable cliff (201).\nMinimum length: 0.6 mm (footprint 9 m).",
+   "files": {
+    "svg": "svg/104.2.svg",
+    "svgTrueSize": "svg-true-size/104.2.svg",
+    "png": "png/104.2.png",
+    "sprite": "sprite.svg#isom-2017-2-104.2"
+   }
+  },
+  {
+   "code": "104.3",
+   "id": 9,
+   "name": "Earth bank, tag line",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "Use this symbol to display the full extent of wide earth banks.",
+   "files": {
+    "svg": "svg/104.3.svg",
+    "svgTrueSize": "svg-true-size/104.3.svg",
+    "png": "png/104.3.png",
+    "sprite": "sprite.svg#isom-2017-2-104.3"
+   }
+  },
+  {
+   "code": "104.9",
+   "id": 10,
+   "name": "Earth bank, minimum size (from ISOM2000)",
+   "type": "point",
+   "shape": "point",
+   "hidden": true,
+   "description": "Provided for migration from ISOM2000. Use of this symbol variant is discouraged for new maps.",
+   "files": {
+    "svg": "svg/104.9.svg",
+    "svgTrueSize": "svg-true-size/104.9.svg",
+    "png": "png/104.9.png",
+    "sprite": "sprite.svg#isom-2017-2-104.9"
+   }
+  },
+  {
+   "code": "105",
+   "id": 11,
+   "name": "Earth wall",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "Distinct earth wall. Minimum height: 1 m.\nMinimum length: 1.4 mm (footprint 21 m).",
+   "files": {
+    "svg": "svg/105.svg",
+    "svgTrueSize": "svg-true-size/105.svg",
+    "png": "png/105.png",
+    "sprite": "sprite.svg#isom-2017-2-105"
+   }
+  },
+  {
+   "code": "106",
+   "id": 12,
+   "name": "Ruined earth wall",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "A ruined or less distinct earth wall. Minimum height: 0.5 m.\nMinimum length: two dashes (3.65 mm - footprint 55 m). If shorter, the object must be exaggerated to the minimum length or changed to symbol Earth wall (105).",
+   "files": {
+    "svg": "svg/106.svg",
+    "svgTrueSize": "svg-true-size/106.svg",
+    "png": "png/106.png",
+    "sprite": "sprite.svg#isom-2017-2-106"
+   }
+  },
+  {
+   "code": "107",
+   "id": 13,
+   "name": "Erosion gully",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "An erosion gully which is too small to be shown using symbol Earth bank (104) is shown by a single line. Minimum depth: 1 m.\nMinimum length: 1.15 mm (footprint 17 m).\nContour lines should not be broken around this symbol.",
+   "files": {
+    "svg": "svg/107.svg",
+    "svgTrueSize": "svg-true-size/107.svg",
+    "png": "png/107.png",
+    "sprite": "sprite.svg#isom-2017-2-107"
+   }
+  },
+  {
+   "code": "108",
+   "id": 14,
+   "name": "Small erosion gully",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "A small erosion gully, dry ditch or trench. Minimum depth: 0.5 m.\nMinimum length (isolated): three dots (1.15 mm - footprint 17 m).\nContour lines should be broken around this symbol.",
+   "files": {
+    "svg": "svg/108.svg",
+    "svgTrueSize": "svg-true-size/108.svg",
+    "png": "png/108.png",
+    "sprite": "sprite.svg#isom-2017-2-108"
+   }
+  },
+  {
+   "code": "109",
+   "id": 15,
+   "name": "Small knoll",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "An obvious mound or knoll which cannot be drawn to scale with a contour.\nMinimum height: 1 m.\nThe symbol shall not touch or overlap contours.\nFootprint: 7.5 m x 7.5 m.",
+   "files": {
+    "svg": "svg/109.svg",
+    "svgTrueSize": "svg-true-size/109.svg",
+    "png": "png/109.png",
+    "sprite": "sprite.svg#isom-2017-2-109"
+   }
+  },
+  {
+   "code": "110",
+   "id": 16,
+   "name": "Small elongated knoll",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "An obvious elongated knoll which cannot be drawn to scale with a contour.\nMinimum height: 1 m.\nThe symbol shall not touch or overlap contours.\nFootprint: 12 m x 6 m.",
+   "files": {
+    "svg": "svg/110.svg",
+    "svgTrueSize": "svg-true-size/110.svg",
+    "png": "png/110.png",
+    "sprite": "sprite.svg#isom-2017-2-110"
+   }
+  },
+  {
+   "code": "111",
+   "id": 17,
+   "name": "Small depression",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "A small depression or hollow without steep sides that is too small to be shown by contours.\nMinimum depth: 1 m, minimum width: 2 m.\nSmall depressions with steep sides are represented with symbol Pit (112).\nThe symbol shall not touch or overlap other brown symbols. Location is the centre of gravity of the symbol, and the symbol is orientated to north.\nFootprint: 12 m x 6 m.",
+   "files": {
+    "svg": "svg/111.svg",
+    "svgTrueSize": "svg-true-size/111.svg",
+    "png": "png/111.png",
+    "sprite": "sprite.svg#isom-2017-2-111"
+   }
+  },
+  {
+   "code": "112",
+   "id": 18,
+   "name": "Pit",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "Pits and holes with distinct steep sides which cannot be shown to scale using symbol Earth bank (104).\nMinimum depth: 1 m, minimum width: 1 m.\nA pit larger than 5 m x 5 m should normally be exaggerated and drawn using Earth bank (104). Pits without steep sides are represented with symbol Small depression (111).\nThe symbol shall not touch or overlap other brown symbols. Location is the centre of gravity of the symbol, and the symbol is orientated to north.\nFootprint: 10.5 m x 12 m.",
+   "files": {
+    "svg": "svg/112.svg",
+    "svgTrueSize": "svg-true-size/112.svg",
+    "png": "png/112.png",
+    "sprite": "sprite.svg#isom-2017-2-112"
+   }
+  },
+  {
+   "code": "113",
+   "id": 19,
+   "name": "Broken ground",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "An area of pits and / or knolls which is too intricate to be shown in detail, or other types of rough and uneven ground that is clearly distinguishable but has little impact on runnability.\nThe dots should be randomly distributed but not interfere with the representation of important terrain features and objects.\nThe minimum number of dots is three (footprint 10 m x 10 m).\nThe maximum centre to centre distance between neighbouring dots is 0.6 mm.\nThe minimum centre to centre distance between neighbouring dots is 0.5 mm.\nContours should not be cut in broken ground areas.\nThe dots shall not be arranged to form a single point wide line.",
+   "files": {
+    "svg": "svg/113.svg",
+    "svgTrueSize": "svg-true-size/113.svg",
+    "png": "png/113.png",
+    "sprite": "sprite.svg#isom-2017-2-113"
+   }
+  },
+  {
+   "code": "113.1",
+   "id": 20,
+   "name": "Broken ground, individual dot",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "An area of pits and / or knolls which is too intricate to be shown in detail, or other types of rough and uneven ground that is clearly distinguishable but has little impact on runnability.\nThe dots should be randomly distributed but not interfere with the representation of important terrain features and objects.\nThe minimum number of dots is three (footprint 10 m x 10 m).\nThe maximum centre to centre distance between neighbouring dots is 0.6 mm.\nThe minimum centre to centre distance between neighbouring dots is 0.5 mm.\nContours should not be cut in broken ground areas.\nThe dots shall not be arranged to form a single point wide line.\nDensity: 3-4 dots / mm².",
+   "files": {
+    "svg": "svg/113.1.svg",
+    "svgTrueSize": "svg-true-size/113.1.svg",
+    "png": "png/113.1.png",
+    "sprite": "sprite.svg#isom-2017-2-113.1"
+   }
+  },
+  {
+   "code": "114",
+   "id": 21,
+   "name": "Very broken ground",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "An area of pits and/or knolls, which is too intricate to be shown in detail, or other types of rough and uneven ground that is clearly distinguishable and affects runnability.\nThe dots should be randomly distributed but not interfere with the representation of important terrain features and objects.\nThe minimum number of dots is three (footprint 7 m x 7 m).\nThe maximum centre to centre distance between neighbouring dots is 0.38 mm.\nThe minimum centre to centre distance between neighbouring dots is 0.25 mm.\nContours should not be cut in broken ground areas.\nThe dots shall not be arranged to form a single point wide line.",
+   "files": {
+    "svg": "svg/114.svg",
+    "svgTrueSize": "svg-true-size/114.svg",
+    "png": "png/114.png",
+    "sprite": "sprite.svg#isom-2017-2-114"
+   }
+  },
+  {
+   "code": "115",
+   "id": 22,
+   "name": "Prominent landform feature",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "The feature must be very clearly distinguishable from its surroundings.\nLocation is the centre of gravity of the symbol, which is orientated to north.\nThe symbol shall not touch or overlap other brown symbols.\nThe definition of the symbol must be given on the map.\nFootprint: 13.5 m x 11.5 m.",
+   "files": {
+    "svg": "svg/115.svg",
+    "svgTrueSize": "svg-true-size/115.svg",
+    "png": "png/115.png",
+    "sprite": "sprite.svg#isom-2017-2-115"
+   }
+  },
+  {
+   "code": "201",
+   "id": 23,
+   "name": "Impassable cliff",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "A cliff, quarry or earth bank that is so high and steep that it is impossible to pass/climb or is dangerous.\nFor vertical rock faces the tags may be omitted if space is short. Ends of the top line may be rounded or square. Shorter tags may be used at the ends.\nThe gap between two impassable cliffs or between impassable cliffs and other impassable feature symbols must exceed 0.25 mm on the map.\nWhen an impassable cliff drops straight into water, making it impossible to pass under the cliff along the water’s edge, the bank line is omitted or the tags shall clearly extend over the bank line. An impassable cliff should interplay with the contour lines.\nMinimum length: 0.6 mm (footprint 9 m).",
+   "files": {
+    "svg": "svg/201.svg",
+    "svgTrueSize": "svg-true-size/201.svg",
+    "png": "png/201.png",
+    "sprite": "sprite.svg#isom-2017-2-201"
+   }
+  },
+  {
+   "code": "201.1",
+   "id": 24,
+   "name": "Impassable cliff, minimum size",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "A cliff, quarry or earth bank that is so high and steep that it is impossible to pass/climb or is dangerous.\nFor vertical rock faces the tags may be omitted if space is short. Ends of the top line may be rounded or square. Shorter tags may be used at the ends.\nThe gap between two impassable cliffs or between impassable cliffs and other impassable feature symbols must exceed 0.25 mm on the map.\nWhen an impassable cliff drops straight into water, making it impossible to pass under the cliff along the water’s edge, the bank line is omitted or the tags shall clearly extend over the bank line. An impassable cliff should interplay with the contour lines.\nMinimum length: 0.6 mm (footprint 9 m).",
+   "files": {
+    "svg": "svg/201.1.svg",
+    "svgTrueSize": "svg-true-size/201.1.svg",
+    "png": "png/201.1.png",
+    "sprite": "sprite.svg#isom-2017-2-201.1"
+   }
+  },
+  {
+   "code": "201.2",
+   "id": 25,
+   "name": "Impassable cliff, plan shape representation (from ISOM2000)",
+   "type": "area",
+   "shape": "area",
+   "hidden": true,
+   "description": "Provided for migration from ISOM2000. Use of this symbol variant is discouraged for new maps.",
+   "files": {
+    "svg": "svg/201.2.svg",
+    "svgTrueSize": "svg-true-size/201.2.svg",
+    "png": "png/201.2.png",
+    "sprite": "sprite.svg#isom-2017-2-201.2"
+   }
+  },
+  {
+   "code": "201.3",
+   "id": 26,
+   "name": "Impassable cliff, top line",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "A cliff, quarry or earth bank that is so high and steep that it is impossible to pass/climb or is dangerous.\nFor vertical rock faces the tags may be omitted if space is short. Ends of the top line may be rounded or square. Shorter tags may be used at the ends.\nThe gap between two impassable cliffs or between impassable cliffs and other impassable feature symbols must exceed 0.25 mm on the map.\nWhen an impassable cliff drops straight into water, making it impossible to pass under the cliff along the water’s edge, the bank line is omitted or the tags shall clearly extend over the bank line. An impassable cliff should interplay with the contour lines.\nMinimum length: 0.6 mm (footprint 9 m).",
+   "files": {
+    "svg": "svg/201.3.svg",
+    "svgTrueSize": "svg-true-size/201.3.svg",
+    "png": "png/201.3.png",
+    "sprite": "sprite.svg#isom-2017-2-201.3"
+   }
+  },
+  {
+   "code": "201.4",
+   "id": 27,
+   "name": "Impassable cliff, tag line",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "Use this symbol to display the full extent of a wide cliff.",
+   "files": {
+    "svg": "svg/201.4.svg",
+    "svgTrueSize": "svg-true-size/201.4.svg",
+    "png": "png/201.4.png",
+    "sprite": "sprite.svg#isom-2017-2-201.4"
+   }
+  },
+  {
+   "code": "201.9",
+   "id": 28,
+   "name": "Impassable cliff, minimum size (from ISOM2000)",
+   "type": "point",
+   "shape": "point",
+   "hidden": true,
+   "description": "Provided for migration from ISOM2000. Use of this symbol variant is discouraged for new maps.",
+   "files": {
+    "svg": "svg/201.9.svg",
+    "svgTrueSize": "svg-true-size/201.9.svg",
+    "png": "png/201.9.png",
+    "sprite": "sprite.svg#isom-2017-2-201.9"
+   }
+  },
+  {
+   "code": "202",
+   "id": 29,
+   "name": "Cliff",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "A passable cliff or quarry. If the direction of fall of the cliff is not apparent from the contours, or to improve legibility, short tags may be drawn in the direction of the downslope.\nFor non-vertical cliffs, the tags should be drawn to show the full horizontal extent. Ends of the base line must be rounded if no tags appear. A passage between two cliffs must be at least 0.2 mm. A cliff should interplay with the contour lines.\nCrossing a cliff will normally slow progress.\nMinimum height: 1 m.\nMinimum length: 0.6 mm (footprint 9 m).",
+   "files": {
+    "svg": "svg/202.svg",
+    "svgTrueSize": "svg-true-size/202.svg",
+    "png": "png/202.png",
+    "sprite": "sprite.svg#isom-2017-2-202"
+   }
+  },
+  {
+   "code": "202.1",
+   "id": 30,
+   "name": "Cliff, minimum size",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "A passable cliff or quarry. If the direction of fall of the cliff is not apparent from the contours, or to improve legibility, short tags may be drawn in the direction of the downslope.\nFor non-vertical cliffs, the tags should be drawn to show the full horizontal extent. Ends of the base line must be rounded if no tags appear. A passage between two cliffs must be at least 0.2 mm. A cliff should interplay with the contour lines.\nCrossing a cliff will normally slow progress.\nMinimum height: 1 m.\nMinimum length: 0.6 mm (footprint 9 m).",
+   "files": {
+    "svg": "svg/202.1.svg",
+    "svgTrueSize": "svg-true-size/202.1.svg",
+    "png": "png/202.1.png",
+    "sprite": "sprite.svg#isom-2017-2-202.1"
+   }
+  },
+  {
+   "code": "202.2",
+   "id": 31,
+   "name": "Cliff, with tags",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "A passable cliff or quarry. If the direction of fall of the cliff is not apparent from the contours, or to improve legibility, short tags may be drawn in the direction of the downslope.\nFor non-vertical cliffs, the tags should be drawn to show the full horizontal extent. Ends of the base line must be rounded if no tags appear. A passage between two cliffs must be at least 0.2 mm. A cliff should interplay with the contour lines.\nCrossing a cliff will normally slow progress.\nMinimum height: 1 m.\nMinimum length: 0.6 mm (footprint 9 m).",
+   "files": {
+    "svg": "svg/202.2.svg",
+    "svgTrueSize": "svg-true-size/202.2.svg",
+    "png": "png/202.2.png",
+    "sprite": "sprite.svg#isom-2017-2-202.2"
+   }
+  },
+  {
+   "code": "202.3",
+   "id": 32,
+   "name": "Cliff, with tags, minimum size",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "A passable cliff or quarry. If the direction of fall of the cliff is not apparent from the contours, or to improve legibility, short tags may be drawn in the direction of the downslope.\nFor non-vertical cliffs, the tags should be drawn to show the full horizontal extent. Ends of the base line must be rounded if no tags appear. A passage between two cliffs must be at least 0.2 mm. A cliff should interplay with the contour lines.\nCrossing a cliff will normally slow progress.\nMinimum height: 1 m.\nMinimum length: 0.6 mm (footprint 9 m).",
+   "files": {
+    "svg": "svg/202.3.svg",
+    "svgTrueSize": "svg-true-size/202.3.svg",
+    "png": "png/202.3.png",
+    "sprite": "sprite.svg#isom-2017-2-202.3"
+   }
+  },
+  {
+   "code": "202.9",
+   "id": 33,
+   "name": "Cliff, with tags, minimum size (from ISOM2000)",
+   "type": "point",
+   "shape": "point",
+   "hidden": true,
+   "description": "Provided for migration from ISOM2000. Use of this symbol variant is discouraged for new maps.",
+   "files": {
+    "svg": "svg/202.9.svg",
+    "svgTrueSize": "svg-true-size/202.9.svg",
+    "png": "png/202.9.png",
+    "sprite": "sprite.svg#isom-2017-2-202.9"
+   }
+  },
+  {
+   "code": "203.1",
+   "id": 34,
+   "name": "Rocky pit or cave (without a distinct entrance)",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "Rocky pits, holes, caves or mineshafts without a distinct entrance which may constitute a danger to the competitor.\nLocation is the centre of gravity of the symbol, and the symbol shall be orientated to north.\nRocky pits larger than 5 m in diameter should be exaggerated and represented using cliff symbols (201, 202).\nMinimum depth: 1 m.\nFootprint: 10.5 m x 12 m.",
+   "files": {
+    "svg": "svg/203.1.svg",
+    "svgTrueSize": "svg-true-size/203.1.svg",
+    "png": "png/203.1.png",
+    "sprite": "sprite.svg#isom-2017-2-203.1"
+   }
+  },
+  {
+   "code": "203.2",
+   "id": 35,
+   "name": "Cave or rocky pit (with a distinct entrance)",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "Rocky pits, holes, caves or mineshafts with a distinct entrance which may constitute a danger to the competitor. Minimum depth: 1 m.\nLocation is the centre of gravity of the symbol, and the symbol should point into the cave.\nRocky pits larger than 5 m in diameter should be exaggerated and represented using cliff symbols (201, 202).",
+   "files": {
+    "svg": "svg/203.2.svg",
+    "svgTrueSize": "svg-true-size/203.2.svg",
+    "png": "png/203.2.png",
+    "sprite": "sprite.svg#isom-2017-2-203.2"
+   }
+  },
+  {
+   "code": "203.9",
+   "id": 36,
+   "name": "Rocky pit or cave with distinct entrance (from ISOM2000)",
+   "type": "point",
+   "shape": "point",
+   "hidden": true,
+   "description": "Provided for migration from ISOM2000. Use of this symbol variant is discouraged for new maps.",
+   "files": {
+    "svg": "svg/203.9.svg",
+    "svgTrueSize": "svg-true-size/203.9.svg",
+    "png": "png/203.9.png",
+    "sprite": "sprite.svg#isom-2017-2-203.9"
+   }
+  },
+  {
+   "code": "204",
+   "id": 37,
+   "name": "Boulder",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "A distinct boulder (should be higher than 1 m), which is immediately identifiable on the ground. Groups of boulders are represented using symbol Boulder cluster (207) or a boulder field symbol (208, 209).\nTo be able to show the distinction between neighbouring (closer than 30 m apart) boulders with significant difference in size, it is permitted to enlarge the symbol to 0.5 mm for some of the boulders.\nFootprint: 6 m diameter (7.5 m diameter).",
+   "files": {
+    "svg": "svg/204.svg",
+    "svgTrueSize": "svg-true-size/204.svg",
+    "png": "png/204.png",
+    "sprite": "sprite.svg#isom-2017-2-204"
+   }
+  },
+  {
+   "code": "204.5",
+   "id": 38,
+   "name": "Boulder or large boulder, different size",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "A boulder which is larger than neighboring boulders (204), or a large boulder which is smaller than neighboring large boulders (205).\n\nTo be able to show the distinction between neighbouring (closer than 30 metres apart) boulders (204) with significant difference in size, it is permitted to use this symbol (0.5 mm) as an enlargement of symbol 204 for some of the boulders.\n\nTo be able to show the distinction between neighbouring (closer than 30 metres apart) large boulders (205) with significant difference in size, it is permitted to use this symbol (0.5 mm) as an as a reduction of symbol 205 for some of the boulders.",
+   "files": {
+    "svg": "svg/204.5.svg",
+    "svgTrueSize": "svg-true-size/204.5.svg",
+    "png": "png/204.5.png",
+    "sprite": "sprite.svg#isom-2017-2-204.5"
+   }
+  },
+  {
+   "code": "205",
+   "id": 39,
+   "name": "Large boulder",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "A particularly large and distinct boulder. A large boulder should be more than 2 m high.\nTo be able to show the distinction between neighbouring (closer than 30 m apart) large boulders with significant difference in size, it is permitted to reduce the size of the symbol to 0.5 mm for some of the boulders.\nFootprint: 9 m diameter (7.5 m diameter).",
+   "files": {
+    "svg": "svg/205.svg",
+    "svgTrueSize": "svg-true-size/205.svg",
+    "png": "png/205.png",
+    "sprite": "sprite.svg#isom-2017-2-205"
+   }
+  },
+  {
+   "code": "206",
+   "id": 40,
+   "name": "Gigantic boulder",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "A gigantic boulder, rock pillar or massive cliff shall be represented in plan shape. The objects can vary in shape and width.\nThe gap between gigantic boulders or between gigantic boulders and other impassable feature symbols must exceed 0.15 mm on the map.\nMinimum width: 0.25 mm (footprint 3.75 m).\nMinimum area: 0.3 mm² (footprint 67 m²).",
+   "files": {
+    "svg": "svg/206.svg",
+    "svgTrueSize": "svg-true-size/206.svg",
+    "png": "png/206.png",
+    "sprite": "sprite.svg#isom-2017-2-206"
+   }
+  },
+  {
+   "code": "207",
+   "id": 41,
+   "name": "Boulder cluster",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "A distinct group of boulders so closely clustered together that they cannot be marked individually. The boulders in the cluster should be higher than 1 m.\nA boulder cluster must be easily identifiable as a group of boulders.\nTo be able to show the distinction between neighbouring (maximum 30 m apart) boulder clusters with significant difference in boulder size, it is permitted to enlarge this symbol to 120% (edge length 0.96 mm) for some of the boulder clusters.\nThe symbol is orientated to north.\nFootprint: 12 m x 10 m.",
+   "files": {
+    "svg": "svg/207.svg",
+    "svgTrueSize": "svg-true-size/207.svg",
+    "png": "png/207.png",
+    "sprite": "sprite.svg#isom-2017-2-207"
+   }
+  },
+  {
+   "code": "207.1",
+   "id": 42,
+   "name": "Boulder cluster, large",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "To be able to show the distinction between neighbouring (maximum 30 m apart) boulder clusters with significant difference in boulder size, it is permitted to use this symbol instead of regular Boulder cluster (207) for some of the boulder clusters.",
+   "files": {
+    "svg": "svg/207.1.svg",
+    "svgTrueSize": "svg-true-size/207.1.svg",
+    "png": "png/207.1.png",
+    "sprite": "sprite.svg#isom-2017-2-207.1"
+   }
+  },
+  {
+   "code": "208",
+   "id": 43,
+   "name": "Boulder field",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "An area which is covered with so many scattered blocks of stone that they cannot be marked individually, is shown with randomly placed and orientated solid triangles. A boulder field will generally not impact runnability. If the runnability of the boulder field is reduced, symbol 209 (dense boulder field) should be used or the symbol should be combined with a stony ground symbol.\nA minimum of two triangles should be used. One triangle may be used if it is combined with other rock symbols (for instance directly below cliff symbols (201, 202), adjacent to boulder symbols (204-206) or combined with stony ground symbols (210-212)).\nThe maximum centre to centre distance between neighbouring triangles is 1.2 mm. The minimum centre to centre distance between neighbouring triangles is 0.75 mm.\nDensity: 0.8-1 symbol / mm². To be able to show obvious height differences within a boulder field, it is permitted to enlarge some of the triangles to 120%.\nFootprint of individual triangle: 12 m x 6 m.",
+   "files": {
+    "svg": "svg/208.svg",
+    "svgTrueSize": "svg-true-size/208.svg",
+    "png": "png/208.png",
+    "sprite": "sprite.svg#isom-2017-2-208"
+   }
+  },
+  {
+   "code": "208.1",
+   "id": 44,
+   "name": "Boulder field, single triangle",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "An area which is covered with so many scattered blocks of stone that they cannot be marked individually, is shown with randomly placed and orientated solid triangles. A boulder field will generally not impact runnability. If the runnability of the boulder field is reduced, symbol 209 (dense boulder field) should be used or the symbol should be combined with a stony ground symbol.\nA minimum of two triangles should be used. One triangle may be used if it is combined with other rock symbols (for instance directly below cliff symbols (201, 202), adjacent to boulder symbols (204-206) or combined with stony ground symbols (210-212)).\nThe maximum centre to centre distance between neighbouring triangles is 1.2 mm. The minimum centre to centre distance between neighbouring triangles is 0.75 mm.\nDensity: 0.8-1 symbol / mm². To be able to show obvious height differences within a boulder field, it is permitted to enlarge some of the triangles to 120%.\nFootprint of individual triangle: 12 m x 6 m.",
+   "files": {
+    "svg": "svg/208.1.svg",
+    "svgTrueSize": "svg-true-size/208.1.svg",
+    "png": "png/208.1.png",
+    "sprite": "sprite.svg#isom-2017-2-208.1"
+   }
+  },
+  {
+   "code": "208.2",
+   "id": 45,
+   "name": "Boulder field, single triangle, enlarged",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "To be able to show obvious height differences within a boulder field, it is permitted to enlarge some of the triangles to 120%.",
+   "files": {
+    "svg": "svg/208.2.svg",
+    "svgTrueSize": "svg-true-size/208.2.svg",
+    "png": "png/208.2.png",
+    "sprite": "sprite.svg#isom-2017-2-208.2"
+   }
+  },
+  {
+   "code": "209",
+   "id": 46,
+   "name": "Dense boulder field",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "An area which is covered with so many blocks of stone that they cannot be marked individually and the runnability is affected, is shown with randomly placed and orientated solid triangles. A minimum of two triangles must be used.\nThe maximum centre to centre distance between neighbouring triangles is 0.6 mm.\nDensity: 2-3 symbols / mm². To be able to show obvious height differences within a boulder field, it is permitted to enlarge some of the triangles to 120%.\nFootprint of individual triangle: 12 m x 6 m.",
+   "files": {
+    "svg": "svg/209.svg",
+    "svgTrueSize": "svg-true-size/209.svg",
+    "png": "png/209.png",
+    "sprite": "sprite.svg#isom-2017-2-209"
+   }
+  },
+  {
+   "code": "210",
+   "id": 47,
+   "name": "Stony ground, slow running",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "Stony or rocky ground which reduces runnability to about 60-80% of normal speed.\nThe dots should be randomly distributed but not interfere with the representation of important terrain features and objects. Illustration serves as an example of density and also point symbol (single dots) can be used to draw stony ground.\nThe minimum number of dots is three (footprint 10 m x 10 m).\nThe maximum centre to centre distance between neighbouring dots is 0.6 mm.\nThe minimum centre to centre distance between neighbouring dots is 0.45 mm.\nDensity: 3-4 dots / mm².\nTo avoid confusion with symbol Distinct vegetation boundary (416), the dots should not be arranged to form a line.",
+   "files": {
+    "svg": "svg/210.svg",
+    "svgTrueSize": "svg-true-size/210.svg",
+    "png": "png/210.png",
+    "sprite": "sprite.svg#isom-2017-2-210"
+   }
+  },
+  {
+   "code": "210.1",
+   "id": 48,
+   "name": "Stony ground, individual dot",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "Stony or rocky ground which reduces runnability to about 60-80% of normal speed.\nThe dots should be randomly distributed but not interfere with the representation of important terrain features and objects. Illustration serves as an example of density and also point symbol (single dots) can be used to draw stony ground.\nThe minimum number of dots is three (footprint 10 m x 10 m).\nThe maximum centre to centre distance between neighbouring dots is 0.6 mm.\nThe minimum centre to centre distance between neighbouring dots is 0.45 mm.\nDensity: 3-4 dots / mm².\nTo avoid confusion with symbol Distinct vegetation boundary (416), the dots should not be arranged to form a line.",
+   "files": {
+    "svg": "svg/210.1.svg",
+    "svgTrueSize": "svg-true-size/210.1.svg",
+    "png": "png/210.1.png",
+    "sprite": "sprite.svg#isom-2017-2-210.1"
+   }
+  },
+  {
+   "code": "211",
+   "id": 49,
+   "name": "Stony ground, walk",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "Stony or rocky ground which reduces the runnability significantly (to about 20-60% of normal speed).\nThe dots should be randomly distributed but not interfere with the representation of important terrain features and objects. Illustration serves as an example of density and also point symbol (single dots) can be used to draw stony ground.\nThe minimum number of dots is three (footprint 8 m x 8 m).\nThe maximum centre to centre distance between neighbouring dots is 0.4 mm.\nThe minimum centre to centre distance between neighbouring dots is 0.32 mm.\nDensity: 6-8 dots / mm².\nTo avoid confusion with symbol Distinct vegetation boundary (416), the dots should not be arranged to form a line.",
+   "files": {
+    "svg": "svg/211.svg",
+    "svgTrueSize": "svg-true-size/211.svg",
+    "png": "png/211.png",
+    "sprite": "sprite.svg#isom-2017-2-211"
+   }
+  },
+  {
+   "code": "212",
+   "id": 50,
+   "name": "Stony ground, fight",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "Stony or rocky ground which is hardly passable (less than 20% of normal speed).\nThe dots should be randomly distributed but not interfere with the representation of important terrain features and objects. Illustration serves as an example of density and also point symbol (single dots) can be used to draw stony ground.\nThe minimum number of dots is three (footprint 7 m x 7 m).\nThe maximum centre to centre distance between neighbouring dots is 0.32 mm.\nThe minimum centre to centre distance between neighbouring dots is 0.25 mm.\nDensity: 10-12 dots / mm².\nTo avoid confusion with symbol Distinct vegetation boundary (416), the dots should not be arranged to form a line.",
+   "files": {
+    "svg": "svg/212.svg",
+    "svgTrueSize": "svg-true-size/212.svg",
+    "png": "png/212.png",
+    "sprite": "sprite.svg#isom-2017-2-212"
+   }
+  },
+  {
+   "code": "213",
+   "id": 51,
+   "name": "Sandy ground",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "An area of soft sandy ground where runnability is reduced to less than 80% of normal speed.\nThe symbol is orientated to north.\nMinimum area: 1 mm x 1 mm (footprint 15 m x 15 m).",
+   "files": {
+    "svg": "svg/213.svg",
+    "svgTrueSize": "svg-true-size/213.svg",
+    "png": "png/213.png",
+    "sprite": "sprite.svg#isom-2017-2-213"
+   }
+  },
+  {
+   "code": "214",
+   "id": 52,
+   "name": "Bare rock",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "A runnable area of rock without earth or vegetation should be shown as bare rock.\nAn area of rock covered with grass, moss or other low vegetation, shall not be shown using the bare rock symbol.\nAn area of less runnable bare rock should be shown using a stony ground symbol (210-212).\nMinimum area: 1 mm x 1 mm (footprint 15 m x 15 m).",
+   "files": {
+    "svg": "svg/214.svg",
+    "svgTrueSize": "svg-true-size/214.svg",
+    "png": "png/214.png",
+    "sprite": "sprite.svg#isom-2017-2-214"
+   }
+  },
+  {
+   "code": "215",
+   "id": 53,
+   "name": "Trench",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "Rocky or artificial trench. Minimum depth should be 1 m.\nMinimum length: 1 mm (footprint 15 m).\nShorter trenches may be exaggerated to the minimum graphical dimension.\nImpassable trenches shall be represented using symbol Impassable cliff (201).\nCollapsed and easily crossable trenches should be mapped as erosion gullies.",
+   "files": {
+    "svg": "svg/215.svg",
+    "svgTrueSize": "svg-true-size/215.svg",
+    "png": "png/215.png",
+    "sprite": "sprite.svg#isom-2017-2-215"
+   }
+  },
+  {
+   "code": "301",
+   "id": 54,
+   "name": "Uncrossable body of water (full colour), with bank line",
+   "type": "combined",
+   "shape": "area",
+   "hidden": false,
+   "description": "The black bank line emphasises that the feature is uncrossable.\nDominant areas of water may be shown with 70% colour. Small areas of water and bodies of water that have narrow parts shall always be shown with full colour.\nMinimum width (inside): 0.3 mm.\nMinimum area (inside): 0.55 mm x 0.55 mm (footprint 8 m x 8 m).",
+   "files": {
+    "svg": "svg/301.svg",
+    "svgTrueSize": "svg-true-size/301.svg",
+    "png": "png/301.png",
+    "sprite": "sprite.svg#isom-2017-2-301"
+   }
+  },
+  {
+   "code": "301.1",
+   "id": 55,
+   "name": "Uncrossable body of water (full colour)",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "Dominant areas of water may be shown with 70% colour. Small areas of water and bodies of water that have narrow parts shall always be shown with full colour.\nMinimum width (inside): 0.3 mm.\nMinimum area (inside): 0.55 mm x 0.55 mm (footprint 8 m x 8 m).",
+   "files": {
+    "svg": "svg/301.1.svg",
+    "svgTrueSize": "svg-true-size/301.1.svg",
+    "png": "png/301.1.png",
+    "sprite": "sprite.svg#isom-2017-2-301.1"
+   }
+  },
+  {
+   "code": "301.2",
+   "id": 56,
+   "name": "Uncrossable body of water (dominant), with bank line",
+   "type": "combined",
+   "shape": "area",
+   "hidden": false,
+   "description": "The black bank line emphasises that the feature is uncrossable.\nDominant areas of water may be shown with 70% colour. Small areas of water and bodies of water that have narrow parts shall always be shown with full colour.\nMinimum width (inside): 0.3 mm.\nMinimum area (inside): 0.55 mm x 0.55 mm (footprint 8 m x 8 m).",
+   "files": {
+    "svg": "svg/301.2.svg",
+    "svgTrueSize": "svg-true-size/301.2.svg",
+    "png": "png/301.2.png",
+    "sprite": "sprite.svg#isom-2017-2-301.2"
+   }
+  },
+  {
+   "code": "301.3",
+   "id": 57,
+   "name": "Uncrossable body of water (dominant)",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "Dominant areas of water may be shown with 70% colour. Small areas of water and bodies of water that have narrow parts shall always be shown with full colour.\nMinimum width (inside): 0.3 mm.\nMinimum area (inside): 0.55 mm x 0.55 mm (footprint 8 m x 8 m).",
+   "files": {
+    "svg": "svg/301.3.svg",
+    "svgTrueSize": "svg-true-size/301.3.svg",
+    "png": "png/301.3.png",
+    "sprite": "sprite.svg#isom-2017-2-301.3"
+   }
+  },
+  {
+   "code": "301.4",
+   "id": 58,
+   "name": "Uncrossable body of water, bank line",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "A black bank line indicates that the feature cannot be crossed.",
+   "files": {
+    "svg": "svg/301.4.svg",
+    "svgTrueSize": "svg-true-size/301.4.svg",
+    "png": "png/301.4.png",
+    "sprite": "sprite.svg#isom-2017-2-301.4"
+   }
+  },
+  {
+   "code": "302",
+   "id": 59,
+   "name": "Shallow body of water, with solid outline",
+   "type": "combined",
+   "shape": "area",
+   "hidden": false,
+   "description": "A shallow seasonal or periodic body of water may be represented using a dashed outline. Small shallow water bodies may be represented as 100% blue (without an outline).\nMinimum width (inside): 0.3 mm.\nMinimum area (inside): 0.7 mm x 0.7 mm (footprint 10.5 m x 10.5 m).\nMinimum width (full colour): 0.3 mm.\nMinimum area (full colour): 0.55 mm x 0.55 mm (footprint 8 m x 8 m).",
+   "files": {
+    "svg": "svg/302.svg",
+    "svgTrueSize": "svg-true-size/302.svg",
+    "png": "png/302.png",
+    "sprite": "sprite.svg#isom-2017-2-302"
+   }
+  },
+  {
+   "code": "302.1",
+   "id": 60,
+   "name": "Shallow body of water",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "A shallow seasonal or periodic body of water may be represented using a dashed outline. Small shallow water bodies may be represented as 100% blue (without an outline).\nMinimum width (inside): 0.3 mm.\nMinimum area (inside): 0.7 mm x 0.7 mm (footprint 10.5 m x 10.5 m).\nMinimum width (full colour): 0.3 mm.\nMinimum area (full colour): 0.55 mm x 0.55 mm (footprint 8 m x 8 m).",
+   "files": {
+    "svg": "svg/302.1.svg",
+    "svgTrueSize": "svg-true-size/302.1.svg",
+    "png": "png/302.1.png",
+    "sprite": "sprite.svg#isom-2017-2-302.1"
+   }
+  },
+  {
+   "code": "302.2",
+   "id": 61,
+   "name": "Shallow body of water, solid outline",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "Use this symbol to represent the outline of a shallow body of water which is not seasonal or periodic.",
+   "files": {
+    "svg": "svg/302.2.svg",
+    "svgTrueSize": "svg-true-size/302.2.svg",
+    "png": "png/302.2.png",
+    "sprite": "sprite.svg#isom-2017-2-302.2"
+   }
+  },
+  {
+   "code": "302.3",
+   "id": 62,
+   "name": "Shallow body of water, dashed outline",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "Use this symbol to represent the outline of a shallow seasonal or periodic body of water.",
+   "files": {
+    "svg": "svg/302.3.svg",
+    "svgTrueSize": "svg-true-size/302.3.svg",
+    "png": "png/302.3.png",
+    "sprite": "sprite.svg#isom-2017-2-302.3"
+   }
+  },
+  {
+   "code": "302.5",
+   "id": 63,
+   "name": "Small shallow body of water (full colour)",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "Small shallow water bodies may be represented using this symbol (without an outline).\nMinimum width: 0.3 mm.\nMinimum area: 0.55 mm x 0.55 mm (footprint 8 m x 8 m).",
+   "files": {
+    "svg": "svg/302.5.svg",
+    "svgTrueSize": "svg-true-size/302.5.svg",
+    "png": "png/302.5.png",
+    "sprite": "sprite.svg#isom-2017-2-302.5"
+   }
+  },
+  {
+   "code": "303",
+   "id": 64,
+   "name": "Waterhole",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "A water-filled pit or an area of water which is too small to be shown to scale. Location is the centre of gravity of the symbol, and the symbol is orientated to north.\nFootprint: 10.5 m x 12 m.",
+   "files": {
+    "svg": "svg/303.svg",
+    "svgTrueSize": "svg-true-size/303.svg",
+    "png": "png/303.png",
+    "sprite": "sprite.svg#isom-2017-2-303"
+   }
+  },
+  {
+   "code": "304",
+   "id": 65,
+   "name": "Crossable watercourse",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "Should be at least 2 m wide.\nMinimum length (isolated): 1 mm (footprint 15 m).",
+   "files": {
+    "svg": "svg/304.svg",
+    "svgTrueSize": "svg-true-size/304.svg",
+    "png": "png/304.png",
+    "sprite": "sprite.svg#isom-2017-2-304"
+   }
+  },
+  {
+   "code": "305",
+   "id": 66,
+   "name": "Small crossable watercourse",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "Minimum length (isolated): 1 mm (footprint 15 m).",
+   "files": {
+    "svg": "svg/305.svg",
+    "svgTrueSize": "svg-true-size/305.svg",
+    "png": "png/305.png",
+    "sprite": "sprite.svg#isom-2017-2-305"
+   }
+  },
+  {
+   "code": "306",
+   "id": 67,
+   "name": "Minor/seasonal water channel",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "A natural or man-made minor water channel which may contain water only intermittently.\nMinimum length (isolated): two dashes (2.75 mm - footprint 41 m).",
+   "files": {
+    "svg": "svg/306.svg",
+    "svgTrueSize": "svg-true-size/306.svg",
+    "png": "png/306.png",
+    "sprite": "sprite.svg#isom-2017-2-306"
+   }
+  },
+  {
+   "code": "307",
+   "id": 68,
+   "name": "Uncrossable marsh, with outline",
+   "type": "combined",
+   "shape": "area",
+   "hidden": false,
+   "description": "A marsh which is uncrossable or dangerous for the competitor. The black outline emphasises that the feature is uncrossable. The black outline is omitted for boundaries between uncrossable marsh and symbol Uncrossable body of water (301). The symbol may be combined with a rough open land symbol (403, 404) to show openness.\nThe symbol is orientated to north.\nMinimum width: 0.3 mm (inside). Minimum area: 0.5 mm² (inside).",
+   "files": {
+    "svg": "svg/307.svg",
+    "svgTrueSize": "svg-true-size/307.svg",
+    "png": "png/307.png",
+    "sprite": "sprite.svg#isom-2017-2-307"
+   }
+  },
+  {
+   "code": "307.1",
+   "id": 69,
+   "name": "Uncrossable marsh",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "A marsh which is uncrossable or dangerous for the competitor. The black outline emphasises that the feature is uncrossable. The black outline is omitted for boundaries between uncrossable marsh and symbol Uncrossable body of water (301). The symbol may be combined with a rough open land symbol (403, 404) to show openness.\nThe symbol is orientated to north.\nMinimum width: 0.3 mm (inside). Minimum area: 0.5 mm² (inside).",
+   "files": {
+    "svg": "svg/307.1.svg",
+    "svgTrueSize": "svg-true-size/307.1.svg",
+    "png": "png/307.1.png",
+    "sprite": "sprite.svg#isom-2017-2-307.1"
+   }
+  },
+  {
+   "code": "307.2",
+   "id": 70,
+   "name": "Uncrossable marsh, outline",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "The black outline emphasises that the feature is uncrossable.",
+   "files": {
+    "svg": "svg/307.2.svg",
+    "svgTrueSize": "svg-true-size/307.2.svg",
+    "png": "png/307.2.png",
+    "sprite": "sprite.svg#isom-2017-2-307.2"
+   }
+  },
+  {
+   "code": "308",
+   "id": 71,
+   "name": "Marsh",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "A crossable marsh, usually with a distinct edge.\nThe symbol shall be combined with other symbols to show runnability and openness.\nThe symbol is orientated to north.\nMinimum area: 0.5 mm x 0.4 mm (footprint 7.5 m x 6 m).",
+   "files": {
+    "svg": "svg/308.svg",
+    "svgTrueSize": "svg-true-size/308.svg",
+    "png": "png/308.png",
+    "sprite": "sprite.svg#isom-2017-2-308"
+   }
+  },
+  {
+   "code": "308.1",
+   "id": 72,
+   "name": "Marsh, minimum size",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "A crossable marsh, usually with a distinct edge.\nThe symbol shall be combined with other symbols to show runnability and openness.\nThe symbol is orientated to north.\nMinimum area: 0.5 mm x 0.4 mm (footprint 7.5 m x 6 m).",
+   "files": {
+    "svg": "svg/308.1.svg",
+    "svgTrueSize": "svg-true-size/308.1.svg",
+    "png": "png/308.1.png",
+    "sprite": "sprite.svg#isom-2017-2-308.1"
+   }
+  },
+  {
+   "code": "309",
+   "id": 73,
+   "name": "Narrow marsh",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "A marsh or trickle of water which is too narrow (less than about 5 m wide) to be shown with the marsh symbol.\nMinimum length (isolated): two dots (0.7 mm - footprint 10.5 m).",
+   "files": {
+    "svg": "svg/309.svg",
+    "svgTrueSize": "svg-true-size/309.svg",
+    "png": "png/309.png",
+    "sprite": "sprite.svg#isom-2017-2-309"
+   }
+  },
+  {
+   "code": "310",
+   "id": 74,
+   "name": "Indistinct marsh",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "An indistinct marsh, seasonal marsh or an area of gradual transition from marsh to firm ground, which is crossable. The edge is generally indistinct and the vegetation similar to that of the surrounding ground.\nThe symbol shall be combined with other symbols to show runnability and openness.\nThe symbol is orientated to north.\nMinimum area: 2.0 mm x 0.7 mm (footprint 30 m x 10.5 m).",
+   "files": {
+    "svg": "svg/310.svg",
+    "svgTrueSize": "svg-true-size/310.svg",
+    "png": "png/310.png",
+    "sprite": "sprite.svg#isom-2017-2-310"
+   }
+  },
+  {
+   "code": "310.1",
+   "id": 75,
+   "name": "Indistinct marsh, minimum size",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "An indistinct marsh, seasonal marsh or an area of gradual transition from marsh to firm ground, which is crossable. The edge is generally indistinct and the vegetation similar to that of the surrounding ground.\nThe symbol shall be combined with other symbols to show runnability and openness.\nThe symbol is orientated to north.\nMinimum area: 2.0 mm x 0.7 mm (footprint 30 m x 10.5 m).",
+   "files": {
+    "svg": "svg/310.1.svg",
+    "svgTrueSize": "svg-true-size/310.1.svg",
+    "png": "png/310.1.png",
+    "sprite": "sprite.svg#isom-2017-2-310.1"
+   }
+  },
+  {
+   "code": "311",
+   "id": 76,
+   "name": "Well, fountain or water tank",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "A prominent well, fountain, water tank or captive spring.\nFootprint: 12 m x 12 m.",
+   "files": {
+    "svg": "svg/311.svg",
+    "svgTrueSize": "svg-true-size/311.svg",
+    "png": "png/311.png",
+    "sprite": "sprite.svg#isom-2017-2-311"
+   }
+  },
+  {
+   "code": "312",
+   "id": 77,
+   "name": "Spring",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "A source of water.\nLocation is the centre of gravity of the symbol.\nThe symbol is orientated to open downstream.\nFootprint: 13.5 m x 7 m.",
+   "files": {
+    "svg": "svg/312.svg",
+    "svgTrueSize": "svg-true-size/312.svg",
+    "png": "png/312.png",
+    "sprite": "sprite.svg#isom-2017-2-312"
+   }
+  },
+  {
+   "code": "313",
+   "id": 78,
+   "name": "Prominent water feature",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "The symbol is orientated to north.\nThe definition of the symbol must be given on the map.\nFootprint: 13.5 m x 13.5 m.",
+   "files": {
+    "svg": "svg/313.svg",
+    "svgTrueSize": "svg-true-size/313.svg",
+    "png": "png/313.png",
+    "sprite": "sprite.svg#isom-2017-2-313"
+   }
+  },
+  {
+   "code": "401",
+   "id": 79,
+   "name": "Open land",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "Open land that has a ground cover (grass, moss or similar) which offers better runnability than typical open forest. If yellow coloured areas become dominant, a screen (75% instead of full yellow) may be used.\nShall not be combined with area symbols other than Broken ground (113), Boulder field (208), Marsh (308) and Indistinct marsh (310).\nMinimum area: 0.55 mm x 0.55 mm (footprint 8 m x 8 m).",
+   "files": {
+    "svg": "svg/401.svg",
+    "svgTrueSize": "svg-true-size/401.svg",
+    "png": "png/401.png",
+    "sprite": "sprite.svg#isom-2017-2-401"
+   }
+  },
+  {
+   "code": "402",
+   "id": 80,
+   "name": "Open land with scattered trees",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "Areas with scattered trees or bushes in open land may be generalised by using a regular pattern of large dots in the yellow screen. The dots may be white (scattered trees) or green (scattered bushes / thickets). Prominent individual trees may be added using symbol Prominent large tree (417). If yellow coloured areas become dominant, a screen (75% instead of full yellow) may be used.\nShall not be combined with area symbols other than symbol Broken ground (113), symbol Boulder field (208) or marsh symbols (308, 310).\nMinimum width: 1.5 mm (footprint 22.5 m).\nMinimum area: 2 mm x 2 mm (footprint 30 m x 30 m).\nSmaller areas must either be left out, exaggerated or shown using symbol Open land (401).\nThe symbol is orientated to north.",
+   "files": {
+    "svg": "svg/402.svg",
+    "svgTrueSize": "svg-true-size/402.svg",
+    "png": "png/402.png",
+    "sprite": "sprite.svg#isom-2017-2-402"
+   }
+  },
+  {
+   "code": "402.1",
+   "id": 81,
+   "name": "Open land with scattered bushes (green dots)",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "Areas with scattered trees or bushes in open land may be generalised by using a regular pattern of large dots in the yellow screen. The dots may be white (scattered trees) or green (scattered bushes / thickets). Prominent individual trees may be added using symbol Prominent large tree (417). If yellow coloured areas become dominant, a screen (75% instead of full yellow) may be used.\nShall not be combined with area symbols other than symbol Broken ground (113), symbol Boulder field (208) or marsh symbols (308, 310).\nMinimum width: 1.5 mm (footprint 22.5 m).\nMinimum area: 2 mm x 2 mm (footprint 30 m x 30 m).\nSmaller areas must either be left out, exaggerated or shown using symbol Open land (401).\nThe symbol is orientated to north.",
+   "files": {
+    "svg": "svg/402.1.svg",
+    "svgTrueSize": "svg-true-size/402.1.svg",
+    "png": "png/402.1.png",
+    "sprite": "sprite.svg#isom-2017-2-402.1"
+   }
+  },
+  {
+   "code": "403",
+   "id": 82,
+   "name": "Rough open land",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "Heath, moorland, felled areas, newly planted areas (trees lower than ca. 1 m) or other generally open land with rough ground vegetation, heather or tall grass offering the same runnability as typical open forest.\nMay be combined with symbol Vegetation: slow running, good visibility (407) or Vegetation: walk, good visibility (409) to show reduced runnability.\nMinimum area: 1 mm x 1 mm (footprint 15 m x 15 m).\nSmaller areas must either be left out, exaggerated or shown using symbol Open land (401).",
+   "files": {
+    "svg": "svg/403.svg",
+    "svgTrueSize": "svg-true-size/403.svg",
+    "png": "png/403.png",
+    "sprite": "sprite.svg#isom-2017-2-403"
+   }
+  },
+  {
+   "code": "404",
+   "id": 83,
+   "name": "Rough open land with scattered trees",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "Areas with scattered trees or bushes in rough open land may be generalised by using a regular pattern of large dots in the yellow screen.\nThe dots may be white (scattered trees) or green (scattered bushes / thickets). Only the white dot variant can be combined with symbol Vegetation: slow running, good visibility (407) or Vegetation: walk, good visibility (409) to show reduced runnability.\nThe symbol is orientated to north.\nMinimum width: 1.5 mm (footprint 22.5 m).\nMinimum area: 2.5 mm x 2.5 mm (footprint 37.5 m x 37.5 m).\nSmaller areas must either be left out, exaggerated or shown using symbol Rough open land (403).",
+   "files": {
+    "svg": "svg/404.svg",
+    "svgTrueSize": "svg-true-size/404.svg",
+    "png": "png/404.png",
+    "sprite": "sprite.svg#isom-2017-2-404"
+   }
+  },
+  {
+   "code": "404.1",
+   "id": 84,
+   "name": "Rough open land with scattered bushes (green dots)",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "Areas with scattered trees or bushes in rough open land may be generalised by using a regular pattern of large dots in the yellow screen.\nThe dots may be white (scattered trees) or green (scattered bushes / thickets). Only the white dot variant can be combined with symbol Vegetation: slow running, good visibility (407) or Vegetation: walk, good visibility (409) to show reduced runnability.\nThe symbol is orientated to north.\nMinimum width: 1.5 mm (footprint 22.5 m).\nMinimum area: 2.5 mm x 2.5 mm (footprint 37.5 m x 37.5 m).\nSmaller areas must either be left out, exaggerated or shown using symbol Rough open land (403).",
+   "files": {
+    "svg": "svg/404.1.svg",
+    "svgTrueSize": "svg-true-size/404.1.svg",
+    "png": "png/404.1.png",
+    "sprite": "sprite.svg#isom-2017-2-404.1"
+   }
+  },
+  {
+   "code": "405",
+   "id": 85,
+   "name": "Forest",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "Typical open forest for the particular type of terrain. If no part of the forest is easily runnable then no white should appear on the map.\nMinimum area: 1 mm x 1 mm (footprint 15 m x 15 m) for openings in screens of other colours, except for the following:\nFor openings in symbol Open land (401), the minimum area is 0.7 mm x 0.7 mm (footprint 10.5 m x 10.5 m).\nFor openings in symbol Vegetation: walk (408), the minimum area is 0.7 mm x 0.7 mm (footprint 10.5 m x 10.5 m).\nFor openings in symbol Vegetation: fight (410) the minimum area is 0.55 mm x 0.55 mm (footprint 8 m x 8 m).",
+   "files": {
+    "svg": "svg/405.svg",
+    "svgTrueSize": "svg-true-size/405.svg",
+    "png": "png/405.png",
+    "sprite": "sprite.svg#isom-2017-2-405"
+   }
+  },
+  {
+   "code": "406",
+   "id": 86,
+   "name": "Vegetation: slow running",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "An area with dense vegetation (low visibility) which reduces running to about 60-80% of normal speed.\nWhere runnability is better in one direction, a regular pattern of white stripes is left in the screen to show the direction of better running.\nMinimum area: 1 mm x 1 mm (footprint 15 m x 15 m).\nMinimum width: 0.4 mm (footprint 6 m).",
+   "files": {
+    "svg": "svg/406.svg",
+    "svgTrueSize": "svg-true-size/406.svg",
+    "png": "png/406.png",
+    "sprite": "sprite.svg#isom-2017-2-406"
+   }
+  },
+  {
+   "code": "406.1",
+   "id": 87,
+   "name": "Vegetation: slow running, normal running in one direction",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "An area with dense vegetation (low visibility) which reduces running to about 60-80% of normal speed.\nWhere runnability is better in one direction, a regular pattern of white stripes is left in the screen to show the direction of better running.\nMinimum area: 1 mm x 1 mm (footprint 15 m x 15 m).\nMinimum width: 0.4 mm (footprint 6 m).",
+   "files": {
+    "svg": "svg/406.1.svg",
+    "svgTrueSize": "svg-true-size/406.1.svg",
+    "png": "png/406.1.png",
+    "sprite": "sprite.svg#isom-2017-2-406.1"
+   }
+  },
+  {
+   "code": "407",
+   "id": 88,
+   "name": "Vegetation: slow running, good visibility",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "An area of good visibility and reduced runnability, due to, for instance, undergrowth (brambles, heather, low bushes, cut branches). Running speed is reduced to about 60-80% of normal speed.\nThe symbol is orientated to north.\nMinimum area: 1.5 mm x 1 mm (footprint 22.5 m x 15 m).",
+   "files": {
+    "svg": "svg/407.svg",
+    "svgTrueSize": "svg-true-size/407.svg",
+    "png": "png/407.png",
+    "sprite": "sprite.svg#isom-2017-2-407"
+   }
+  },
+  {
+   "code": "408",
+   "id": 89,
+   "name": "Vegetation: walk",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "An area with dense trees or thickets (low visibility) which reduce running to about 20-60% of normal speed. Where runnability is better in one direction, a regular pattern of white or green 20% stripes is left in the screen to show the direction of better running.\nMinimum area: 0.7 mm x 0.7 mm (footprint 10.5 m x 10.5 m).\nMinimum width: 0.3 mm (footprint 4.5 m).",
+   "files": {
+    "svg": "svg/408.svg",
+    "svgTrueSize": "svg-true-size/408.svg",
+    "png": "png/408.png",
+    "sprite": "sprite.svg#isom-2017-2-408"
+   }
+  },
+  {
+   "code": "408.1",
+   "id": 90,
+   "name": "Vegetation: walk, normal running in one direction",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "An area with dense trees or thickets (low visibility) which reduce running to about 20-60% of normal speed. Where runnability is better in one direction, a regular pattern of white or green 20% stripes is left in the screen to show the direction of better running.\nMinimum area: 0.7 mm x 0.7 mm (footprint 10.5 m x 10.5 m).\nMinimum width: 0.3 mm (footprint 4.5 m).",
+   "files": {
+    "svg": "svg/408.1.svg",
+    "svgTrueSize": "svg-true-size/408.1.svg",
+    "png": "png/408.1.png",
+    "sprite": "sprite.svg#isom-2017-2-408.1"
+   }
+  },
+  {
+   "code": "408.2",
+   "id": 91,
+   "name": "Vegetation: walk, slow running in one direction",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "An area with dense trees or thickets (low visibility) which reduce running to about 20-60% of normal speed. Where runnability is better in one direction, a regular pattern of white or green 20% stripes is left in the screen to show the direction of better running.\nMinimum area: 0.7 mm x 0.7 mm (footprint 10.5 m x 10.5 m).\nMinimum width: 0.3 mm (footprint 4.5 m).",
+   "files": {
+    "svg": "svg/408.2.svg",
+    "svgTrueSize": "svg-true-size/408.2.svg",
+    "png": "png/408.2.png",
+    "sprite": "sprite.svg#isom-2017-2-408.2"
+   }
+  },
+  {
+   "code": "409",
+   "id": 92,
+   "name": "Vegetation: walk, good visibility",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "An area of good visibility that is difficult to run through, due to, for instance, undergrowth (brambles, heather, low bushes, cut branches). Running speed is reduced to about 20-60% of normal speed.\nAreas of good visibility that are very difficult to run or impassable are represented using symbol Vegetation: fight (410).\nThe symbol is orientated to north.\nMinimum area: 1 mm x 1 mm (footprint 15 m x 15 m).",
+   "files": {
+    "svg": "svg/409.svg",
+    "svgTrueSize": "svg-true-size/409.svg",
+    "png": "png/409.png",
+    "sprite": "sprite.svg#isom-2017-2-409"
+   }
+  },
+  {
+   "code": "410",
+   "id": 93,
+   "name": "Vegetation: fight",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "An area of dense vegetation (trees or undergrowth) which is barely passable. Running reduced to less than about 20% of normal speed.\nWhere runnability is better in one direction, a regular pattern of white, green 30% or green 60% stripes is left in the screen to show the direction of better running.\nMinimum area: 0.55 mm x 0.55 mm (footprint 8 m x 8 m).\nMinimum width: 0.25 mm (footprint 3.8 m).",
+   "files": {
+    "svg": "svg/410.svg",
+    "svgTrueSize": "svg-true-size/410.svg",
+    "png": "png/410.png",
+    "sprite": "sprite.svg#isom-2017-2-410"
+   }
+  },
+  {
+   "code": "410.1",
+   "id": 94,
+   "name": "Vegetation: fight, normal running in one direction",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "An area of dense vegetation (trees or undergrowth) which is barely passable. Running reduced to less than about 20% of normal speed.\nWhere runnability is better in one direction, a regular pattern of white, green 30% or green 60% stripes is left in the screen to show the direction of better running.\nMinimum area: 0.55 mm x 0.55 mm (footprint 8 m x 8 m).\nMinimum width: 0.25 mm (footprint 3.8 m).",
+   "files": {
+    "svg": "svg/410.1.svg",
+    "svgTrueSize": "svg-true-size/410.1.svg",
+    "png": "png/410.1.png",
+    "sprite": "sprite.svg#isom-2017-2-410.1"
+   }
+  },
+  {
+   "code": "410.2",
+   "id": 95,
+   "name": "Vegetation: fight, slow running in one direction",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "An area of dense vegetation (trees or undergrowth) which is barely passable. Running reduced to less than about 20% of normal speed.\nWhere runnability is better in one direction, a regular pattern of white, green 30% or green 60% stripes is left in the screen to show the direction of better running.\nMinimum area: 0.55 mm x 0.55 mm (footprint 8 m x 8 m).\nMinimum width: 0.25 mm (footprint 3.8 m).",
+   "files": {
+    "svg": "svg/410.2.svg",
+    "svgTrueSize": "svg-true-size/410.2.svg",
+    "png": "png/410.2.png",
+    "sprite": "sprite.svg#isom-2017-2-410.2"
+   }
+  },
+  {
+   "code": "410.3",
+   "id": 96,
+   "name": "Vegetation: fight, walk in one direction",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "An area of dense vegetation (trees or undergrowth) which is barely passable. Running reduced to less than about 20% of normal speed.\nWhere runnability is better in one direction, a regular pattern of white, green 30% or green 60% stripes is left in the screen to show the direction of better running.\nMinimum area: 0.55 mm x 0.55 mm (footprint 8 m x 8 m).\nMinimum width: 0.25 mm (footprint 3.8 m).",
+   "files": {
+    "svg": "svg/410.3.svg",
+    "svgTrueSize": "svg-true-size/410.3.svg",
+    "png": "png/410.3.png",
+    "sprite": "sprite.svg#isom-2017-2-410.3"
+   }
+  },
+  {
+   "code": "410.4",
+   "id": 97,
+   "name": "Vegetation: fight, minimum width",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "An area of dense vegetation (trees or undergrowth) which is effectively impassable.\nMinimum width: 0.35 mm",
+   "files": {
+    "svg": "svg/410.4.svg",
+    "svgTrueSize": "svg-true-size/410.4.svg",
+    "png": "png/410.4.png",
+    "sprite": "sprite.svg#isom-2017-2-410.4"
+   }
+  },
+  {
+   "code": "411",
+   "id": 98,
+   "name": "Vegetation, impassable (from ISOM 2017, first edition)",
+   "type": "area",
+   "shape": "area",
+   "hidden": true,
+   "description": "Provided for migration from ISOM 2000. Use either Vegetation: fight (410) or Area that shall not be entered (520) instead.",
+   "files": {
+    "svg": "svg/411.svg",
+    "svgTrueSize": "svg-true-size/411.svg",
+    "png": "png/411.png",
+    "sprite": "sprite.svg#isom-2017-2-411"
+   }
+  },
+  {
+   "code": "412",
+   "id": 99,
+   "name": "Cultivated land",
+   "type": "combined",
+   "shape": "area",
+   "hidden": false,
+   "description": "Cultivated land, normally used for growing crops. Runnability may vary according to the type of crops grown and the time of year. For agroforestry, symbol Forest (405) or Open land with scattered trees (402) may be used instead of yellow.\nSince the runnability may vary, such areas should be avoided when setting courses.\nThe symbol is combined with symbol Out-of-bounds area (709) to show cultivated land that shall not be entered.\nThe symbol is orientated to north.\nMinimum area: 3 mm x 3 mm (footprint 45 m x 45 m).",
+   "files": {
+    "svg": "svg/412.svg",
+    "svgTrueSize": "svg-true-size/412.svg",
+    "png": "png/412.png",
+    "sprite": "sprite.svg#isom-2017-2-412"
+   }
+  },
+  {
+   "code": "412.1",
+   "id": 100,
+   "name": "Cultivated land (black pattern)",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "Cultivated land. This symbol must be used together with another symbol:\n- For land used for growing crops, combine with symbol Open land (401).\n- For agroforrestry, use with symbol Forest (405) or Open land with scattered trees (402).\nRunnability may vary according to the type of crops or trees, and the time of year.\nSince the runnability may vary, such areas should be avoided when setting courses.\nThe symbol is orientated to north.\nMinimum area: 3 mm x 3 mm (footprint 45 m x 45 m).",
+   "files": {
+    "svg": "svg/412.1.svg",
+    "svgTrueSize": "svg-true-size/412.1.svg",
+    "png": "png/412.1.png",
+    "sprite": "sprite.svg#isom-2017-2-412.1"
+   }
+  },
+  {
+   "code": "413",
+   "id": 101,
+   "name": "Orchard",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "Land planted with trees or bushes, normally in a regular pattern. The dot lines may be orientated to show the direction of planting.\nMust be combined with either symbol Open land (401) or Rough open land (403).\nMay be combined with symbol Vegetation: slow running, good visibility (407) or Vegetation: walk, good visibility (409) to show reduced runnability.\nMinimum area: 2 mm x 2 mm (footprint 30 m x 30 m).",
+   "files": {
+    "svg": "svg/413.svg",
+    "svgTrueSize": "svg-true-size/413.svg",
+    "png": "png/413.png",
+    "sprite": "sprite.svg#isom-2017-2-413"
+   }
+  },
+  {
+   "code": "413.1",
+   "id": 102,
+   "name": "Orchard, rough open land",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "Land planted with trees or bushes, normally in a regular pattern. The dot lines may be orientated to show the direction of planting.\nMust be combined with either symbol Open land (401) or Rough open land (403).\nMay be combined with symbol Vegetation: slow running, good visibility (407) or Vegetation: walk, good visibility (409) to show reduced runnability.\nMinimum area: 2 mm x 2 mm (footprint 30 m x 30 m).",
+   "files": {
+    "svg": "svg/413.1.svg",
+    "svgTrueSize": "svg-true-size/413.1.svg",
+    "png": "png/413.1.png",
+    "sprite": "sprite.svg#isom-2017-2-413.1"
+   }
+  },
+  {
+   "code": "414",
+   "id": 103,
+   "name": "Vineyard or similar",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "A vineyard or similar cultivated land containing dense rows of plants offering good or normal runnability in the direction of planting. The lines shall be orientated to show the direction of planting. At least three lines shall be clearly visible. Must be combined with either symbol Open land (401) or Rough open land (403).\nMinimum area: 2 mm x 2 mm (footprint 30 m x 30 m).",
+   "files": {
+    "svg": "svg/414.svg",
+    "svgTrueSize": "svg-true-size/414.svg",
+    "png": "png/414.png",
+    "sprite": "sprite.svg#isom-2017-2-414"
+   }
+  },
+  {
+   "code": "414.1",
+   "id": 104,
+   "name": "Vineyard or similar, rough open land",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "A vineyard or similar cultivated land containing dense rows of plants offering good or normal runnability in the direction of planting. The lines shall be orientated to show the direction of planting. At least three lines shall be clearly visible. Must be combined with either symbol Open land (401) or Rough open land (403).\nMinimum area: 2 mm x 2 mm (footprint 30 m x 30 m).",
+   "files": {
+    "svg": "svg/414.1.svg",
+    "svgTrueSize": "svg-true-size/414.1.svg",
+    "png": "png/414.1.png",
+    "sprite": "sprite.svg#isom-2017-2-414.1"
+   }
+  },
+  {
+   "code": "415",
+   "id": 105,
+   "name": "Distinct cultivation boundary",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "A boundary of cultivated land vegetation (symbols 401, 412, 413, 414) or a boundary between areas of cultivated land when not shown with other symbols (fence, wall, path, etc.).\nMinimum length: 2 mm (footprint 30 m).",
+   "files": {
+    "svg": "svg/415.svg",
+    "svgTrueSize": "svg-true-size/415.svg",
+    "png": "png/415.png",
+    "sprite": "sprite.svg#isom-2017-2-415"
+   }
+  },
+  {
+   "code": "416",
+   "id": 106,
+   "name": "Distinct vegetation boundary",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "A distinct forest edge or vegetation boundary within the forest.\nVery distinct forest edges and vegetation boundaries may be represented using the cultivation boundary symbol. Only one of the vegetation boundary symbols (black dotted line or dashed green line) can be used on a map. For areas with a lot of rock features, it is recommended to use the green dashed line for vegetation boundaries.\nA disadvantage with a green line is that it cannot be used to show distinct vegetation boundaries around and within symbol Vegetation: fight (410). An alternative for these situations is to use symbol Distinct cultivation boundary (415).\nMinimum length, black dot implementation: 5 dots (2.5 mm - footprint 37 m).\nMinimum length, green line implementation: 4 dashes (1.8 mm - footprint 27 m).",
+   "files": {
+    "svg": "svg/416.svg",
+    "svgTrueSize": "svg-true-size/416.svg",
+    "png": "png/416.png",
+    "sprite": "sprite.svg#isom-2017-2-416"
+   }
+  },
+  {
+   "code": "416.1",
+   "id": 107,
+   "name": "Distinct vegetation boundary, green dashed line",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "A distinct forest edge or vegetation boundary within the forest.\nVery distinct forest edges and vegetation boundaries may be represented using the cultivation boundary symbol. Only one of the vegetation boundary symbols (black dotted line or dashed green line) can be used on a map. For areas with a lot of rock features, it is recommended to use the green dashed line for vegetation boundaries.\nA disadvantage with a green line is that it cannot be used to show distinct vegetation boundaries around and within symbol Vegetation: fight (410). An alternative for these situations is to use symbol Distinct cultivation boundary (415).\nMinimum length, black dot implementation: 5 dots (2.5 mm - footprint 37 m).\nMinimum length, green line implementation: 4 dashes (1.8 mm - footprint 27 m).",
+   "files": {
+    "svg": "svg/416.1.svg",
+    "svgTrueSize": "svg-true-size/416.1.svg",
+    "png": "png/416.1.png",
+    "sprite": "sprite.svg#isom-2017-2-416.1"
+   }
+  },
+  {
+   "code": "417",
+   "id": 108,
+   "name": "Prominent large tree",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "Footprint: 13.5 m x 13.5 m.",
+   "files": {
+    "svg": "svg/417.svg",
+    "svgTrueSize": "svg-true-size/417.svg",
+    "png": "png/417.png",
+    "sprite": "sprite.svg#isom-2017-2-417"
+   }
+  },
+  {
+   "code": "418",
+   "id": 109,
+   "name": "Prominent bush or tree",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "Use sparingly, as it is easily mistaken for symbol Small knoll (109).\nFootprint: 9.0 m x 9.0 m.",
+   "files": {
+    "svg": "svg/418.svg",
+    "svgTrueSize": "svg-true-size/418.svg",
+    "png": "png/418.png",
+    "sprite": "sprite.svg#isom-2017-2-418"
+   }
+  },
+  {
+   "code": "419",
+   "id": 110,
+   "name": "Prominent vegetation feature",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "The symbol is orientated to north.\nThe definition of the symbol must be given on the map.\nFootprint: 13.5 m x 13.5 m.",
+   "files": {
+    "svg": "svg/419.svg",
+    "svgTrueSize": "svg-true-size/419.svg",
+    "png": "png/419.png",
+    "sprite": "sprite.svg#isom-2017-2-419"
+   }
+  },
+  {
+   "code": "501",
+   "id": 111,
+   "name": "Paved area, with bounding line",
+   "type": "combined",
+   "shape": "area",
+   "hidden": false,
+   "description": "An area with a firm surface such as asphalt, hard gravel, tiles, concrete or the like. Paved areas should be bordered (or framed) by a thin black line where they have a distinct boundary.\nMinimum area: 1 mm x 1 mm (footprint 15 m x 15 m).",
+   "files": {
+    "svg": "svg/501.svg",
+    "svgTrueSize": "svg-true-size/501.svg",
+    "png": "png/501.png",
+    "sprite": "sprite.svg#isom-2017-2-501"
+   }
+  },
+  {
+   "code": "501.1",
+   "id": 112,
+   "name": "Paved area",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "An area with a firm surface such as asphalt, hard gravel, tiles, concrete or the like. Paved areas should be bordered (or framed) by a thin black line where they have a distinct boundary.\nMinimum area: 1 mm x 1 mm (footprint 15 m x 15 m).",
+   "files": {
+    "svg": "svg/501.1.svg",
+    "svgTrueSize": "svg-true-size/501.1.svg",
+    "png": "png/501.1.png",
+    "sprite": "sprite.svg#isom-2017-2-501.1"
+   }
+  },
+  {
+   "code": "501.2",
+   "id": 113,
+   "name": "Paved area, bounding line",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "Paved areas should be bordered (or framed) by a thin black line where they have a distinct boundary.",
+   "files": {
+    "svg": "svg/501.2.svg",
+    "svgTrueSize": "svg-true-size/501.2.svg",
+    "png": "png/501.2.png",
+    "sprite": "sprite.svg#isom-2017-2-501.2"
+   }
+  },
+  {
+   "code": "502",
+   "id": 114,
+   "name": "Wide road, minimum width",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "The width should be drawn to scale, but not smaller than the minimum width (0.3 + 2*0.14 mm - footprint 8.7 m). The outer boundary lines may be replaced with other black line symbols, such as symbol Fence (516), Impassable fence (518), Wall (513) or Impassable wall (515) if the feature is so close to the road edge that it cannot practically be shown as a separate symbol.\nThe space between the black lines is filled with brown (50%).\nA road with two carriageways can be represented using two wide road symbols side by side, keeping only one of the road edges in the middle.",
+   "files": {
+    "svg": "svg/502.svg",
+    "svgTrueSize": "svg-true-size/502.svg",
+    "png": "png/502.png",
+    "sprite": "sprite.svg#isom-2017-2-502"
+   }
+  },
+  {
+   "code": "502.1",
+   "id": 115,
+   "name": "Wide road, 0.5 mm (from ISOM2000)",
+   "type": "line",
+   "shape": "line",
+   "hidden": true,
+   "description": "Provided for migration from ISOM2000. Use of this symbol variant is discouraged for new maps.",
+   "files": {
+    "svg": "svg/502.1.svg",
+    "svgTrueSize": "svg-true-size/502.1.svg",
+    "png": "png/502.1.png",
+    "sprite": "sprite.svg#isom-2017-2-502.1"
+   }
+  },
+  {
+   "code": "502.2",
+   "id": 116,
+   "name": "Road with two carriageways",
+   "type": "combined",
+   "shape": "line",
+   "hidden": false,
+   "description": "The width should be drawn to scale, but not smaller than the minimum width (0.3 + 2*0.14 mm - footprint 8.7 m). The outer boundary lines may be replaced with other black line symbols, such as symbol Fence (516), Impassable fence (518), Wall (513) or Impassable wall (515) if the feature is so close to the road edge that it cannot practically be shown as a separate symbol.\nThe space between the black lines is filled with brown (50%).\nA road with two carriageways can be represented using two wide road symbols side by side, keeping only one of the road edges in the middle.",
+   "files": {
+    "svg": "svg/502.2.svg",
+    "svgTrueSize": "svg-true-size/502.2.svg",
+    "png": "png/502.2.png",
+    "sprite": "sprite.svg#isom-2017-2-502.2"
+   }
+  },
+  {
+   "code": "503",
+   "id": 117,
+   "name": "Road",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "A maintained road suitable for motor vehicles in all weather. Width less than 5 m.",
+   "files": {
+    "svg": "svg/503.svg",
+    "svgTrueSize": "svg-true-size/503.svg",
+    "png": "png/503.png",
+    "sprite": "sprite.svg#isom-2017-2-503"
+   }
+  },
+  {
+   "code": "504",
+   "id": 118,
+   "name": "Vehicle track",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "A track or poorly maintained road suitable for vehicles only when travelling slowly. For distinct junctions the dashes of the symbols are joined at the junction.\nFor indistinct junctions the dashes of the symbols are not joined.\nMinimum length (isolated): two dashes (6.25 mm - footprint 94 m).",
+   "files": {
+    "svg": "svg/504.svg",
+    "svgTrueSize": "svg-true-size/504.svg",
+    "png": "png/504.png",
+    "sprite": "sprite.svg#isom-2017-2-504"
+   }
+  },
+  {
+   "code": "505",
+   "id": 119,
+   "name": "Footpath",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "An easily runnable path, bicycle track or old vehicle track.\nFor distinct junctions the dashes of the symbols are joined at the junction.\nFor indistinct junctions the dashes of the symbols are not joined.\nMinimum length (isolated): two dashes (4.25 mm - footprint 64 m)",
+   "files": {
+    "svg": "svg/505.svg",
+    "svgTrueSize": "svg-true-size/505.svg",
+    "png": "png/505.png",
+    "sprite": "sprite.svg#isom-2017-2-505"
+   }
+  },
+  {
+   "code": "506",
+   "id": 120,
+   "name": "Small footpath",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "A runnable small path or (temporary) forest extraction track which can be followed at competition speed.\nFor distinct junctions the dashes of the symbols are joined at the junction.\nFor indistinct junctions the dashes of the symbols are not joined.\nMinimum length (isolated): two dashes (2.25 mm - footprint 34 m).",
+   "files": {
+    "svg": "svg/506.svg",
+    "svgTrueSize": "svg-true-size/506.svg",
+    "png": "png/506.png",
+    "sprite": "sprite.svg#isom-2017-2-506"
+   }
+  },
+  {
+   "code": "507",
+   "id": 121,
+   "name": "Less distinct small footpath",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "A runnable less distinct / visible small path or forestry extraction track.\nMinimum length: two sections of double dashes (5.3 mm - footprint 79.5 m).",
+   "files": {
+    "svg": "svg/507.svg",
+    "svgTrueSize": "svg-true-size/507.svg",
+    "png": "png/507.png",
+    "sprite": "sprite.svg#isom-2017-2-507"
+   }
+  },
+  {
+   "code": "508",
+   "id": 122,
+   "name": "Narrow ride",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "A forest ride or a prominent trace (forestry extraction track, sandy track, ski track) through the terrain which does not have a distinct runnable path along it. Runnability is shown using a slightly thicker line of yellow, green or white as background.\nWithout background: the same runnability as the surroundings.\nYellow 100%: easy running.\nWhite in green: normal runnability.\nGreen 30%: slow running.\nGreen 60%: walk.\nMinimum length: two dashes (3.25 mm - footprint 48 m).",
+   "files": {
+    "svg": "svg/508.svg",
+    "svgTrueSize": "svg-true-size/508.svg",
+    "png": "png/508.png",
+    "sprite": "sprite.svg#isom-2017-2-508"
+   }
+  },
+  {
+   "code": "508.1",
+   "id": 123,
+   "name": "Narrow ride, easy running",
+   "type": "combined",
+   "shape": "line",
+   "hidden": false,
+   "description": "A forest ride or a prominent trace (forestry extraction track, sandy track, ski track) through the terrain which does not have a distinct runnable path along it. Runnability is shown using a slightly thicker line of yellow, green or white as background.\nMinimum length: two dashes (3.25 mm - footprint 48 m).",
+   "files": {
+    "svg": "svg/508.1.svg",
+    "svgTrueSize": "svg-true-size/508.1.svg",
+    "png": "png/508.1.png",
+    "sprite": "sprite.svg#isom-2017-2-508.1"
+   }
+  },
+  {
+   "code": "508.2",
+   "id": 124,
+   "name": "Narrow ride, normal runnability",
+   "type": "combined",
+   "shape": "line",
+   "hidden": false,
+   "description": "A forest ride or a prominent trace (forestry extraction track, sandy track, ski track) through the terrain which does not have a distinct runnable path along it. Runnability is shown using a slightly thicker line of yellow, green or white as background.\nMinimum length: two dashes (3.25 mm - footprint 48 m).",
+   "files": {
+    "svg": "svg/508.2.svg",
+    "svgTrueSize": "svg-true-size/508.2.svg",
+    "png": "png/508.2.png",
+    "sprite": "sprite.svg#isom-2017-2-508.2"
+   }
+  },
+  {
+   "code": "508.3",
+   "id": 125,
+   "name": "Narrow ride, slow running",
+   "type": "combined",
+   "shape": "line",
+   "hidden": false,
+   "description": "A forest ride or a prominent trace (forestry extraction track, sandy track, ski track) through the terrain which does not have a distinct runnable path along it. Runnability is shown using a slightly thicker line of yellow, green or white as background.\nMinimum length: two dashes (3.25 mm - footprint 48 m).",
+   "files": {
+    "svg": "svg/508.3.svg",
+    "svgTrueSize": "svg-true-size/508.3.svg",
+    "png": "png/508.3.png",
+    "sprite": "sprite.svg#isom-2017-2-508.3"
+   }
+  },
+  {
+   "code": "508.4",
+   "id": 126,
+   "name": "Narrow ride, walk",
+   "type": "combined",
+   "shape": "line",
+   "hidden": false,
+   "description": "A forest ride or a prominent trace (forestry extraction track, sandy track, ski track) through the terrain which does not have a distinct runnable path along it. Runnability is shown using a slightly thicker line of yellow, green or white as background.\nMinimum length: two dashes (3.25 mm - footprint 48 m).",
+   "files": {
+    "svg": "svg/508.4.svg",
+    "svgTrueSize": "svg-true-size/508.4.svg",
+    "png": "png/508.4.png",
+    "sprite": "sprite.svg#isom-2017-2-508.4"
+   }
+  },
+  {
+   "code": "509",
+   "id": 127,
+   "name": "Railway",
+   "type": "combined",
+   "shape": "line",
+   "hidden": false,
+   "description": "A railway or other kind of railed track.\nIf it is forbidden to run along the railway, it shall be combined with symbol Out-of-bounds route (711). If it is forbidden to cross the railway, it must be combined with symbol Area that shall not be entered (520) or Out-of-bounds area (709).\nMinimum length (isolated): two dashes (4 mm - footprint 60 m).",
+   "files": {
+    "svg": "svg/509.svg",
+    "svgTrueSize": "svg-true-size/509.svg",
+    "png": "png/509.png",
+    "sprite": "sprite.svg#isom-2017-2-509"
+   }
+  },
+  {
+   "code": "510",
+   "id": 128,
+   "name": "Power line, cableway or skilift",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "Power line, cableway or skilift. The bars show the exact location of the pylons. The line may be broken to improve legibility.\nIf a section of a power line, cableway or skilift goes along a road or path (and does not offer significant additional navigational value) it should be omitted.\nMinimum length (isolated): 5 mm (footprint: 75 m).",
+   "files": {
+    "svg": "svg/510.svg",
+    "svgTrueSize": "svg-true-size/510.svg",
+    "png": "png/510.png",
+    "sprite": "sprite.svg#isom-2017-2-510"
+   }
+  },
+  {
+   "code": "511",
+   "id": 129,
+   "name": "Major power line, minimum width",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "Major power lines should be drawn with a double line. The gap between the lines may indicate the extent of the power line. The lines may be broken to improve legibility.\nVery large carrying masts shall be represented in plan shape using outline of symbol Building (521) or with symbol High tower (524).",
+   "files": {
+    "svg": "svg/511.svg",
+    "svgTrueSize": "svg-true-size/511.svg",
+    "png": "png/511.png",
+    "sprite": "sprite.svg#isom-2017-2-511"
+   }
+  },
+  {
+   "code": "511.1",
+   "id": 130,
+   "name": "Major power line",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "Major power lines should be drawn with a double line. The gap between the lines may indicate the extent of the power line. The lines may be broken to improve legibility. The bars show the exact location of the pylons. Very large carrying masts shall be represented in plan shape using outline of symbol Building (521) or with symbol High tower (524).",
+   "files": {
+    "svg": "svg/511.1.svg",
+    "svgTrueSize": "svg-true-size/511.1.svg",
+    "png": "png/511.1.png",
+    "sprite": "sprite.svg#isom-2017-2-511.1"
+   }
+  },
+  {
+   "code": "511.2",
+   "id": 131,
+   "name": "Major power line, large carrying masts",
+   "type": "combined",
+   "shape": "line",
+   "hidden": false,
+   "description": "Major power lines should be drawn with a double line. The gap between the lines may indicate the extent of the powerline. The bars show the exact location of the pylons. The lines may be broken to improve legibility. Very large carrying masts shall be represented in plan shape using symbol 521 (building) or with symbol 524 (high tower).",
+   "files": {
+    "svg": "svg/511.2.svg",
+    "svgTrueSize": "svg-true-size/511.2.svg",
+    "png": "png/511.2.png",
+    "sprite": "sprite.svg#isom-2017-2-511.2"
+   }
+  },
+  {
+   "code": "512",
+   "id": 132,
+   "name": "Bridge / tunnel",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "Bridges and tunnels are represented using the same basic symbols.\nIf it is not possible to get through a tunnel (or under a bridge), it shall be omitted.\nMinimum length (of baseline): 0.4 mm (footprint 6 m).\nSmall bridges connected to a track/path are shown by centring a track dash on the crossing. Tracks/paths are broken for water course crossings without bridges. A small footbridge with no path leading to it is represented with a single dash.",
+   "files": {
+    "svg": "svg/512.svg",
+    "svgTrueSize": "svg-true-size/512.svg",
+    "png": "png/512.png",
+    "sprite": "sprite.svg#isom-2017-2-512"
+   }
+  },
+  {
+   "code": "512.1",
+   "id": 133,
+   "name": "Bridge / tunnel, minimum size",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "Bridges and tunnels are represented using the same basic symbols.\nIf it is not possible to get through a tunnel (or under a bridge), it shall be omitted.\nMinimum length (of baseline): 0.4 mm (footprint 6 m).\nSmall bridges connected to a track/path are shown by centring a track dash on the crossing. Tracks/paths are broken for water course crossings without bridges. A small footbridge with no path leading to it is represented with a single dash.",
+   "files": {
+    "svg": "svg/512.1.svg",
+    "svgTrueSize": "svg-true-size/512.1.svg",
+    "png": "png/512.1.png",
+    "sprite": "sprite.svg#isom-2017-2-512.1"
+   }
+  },
+  {
+   "code": "512.2",
+   "id": 134,
+   "name": "Footbridge",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "A small footbridge with no path leading to it is represented with a single dash.\nNote: if the stream is wider than 0.25 mm, adjust this symbol so it extends 0.5 mm over both sides of the stream!",
+   "files": {
+    "svg": "svg/512.2.svg",
+    "svgTrueSize": "svg-true-size/512.2.svg",
+    "png": "png/512.2.png",
+    "sprite": "sprite.svg#isom-2017-2-512.2"
+   }
+  },
+  {
+   "code": "513",
+   "id": 135,
+   "name": "Wall",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "A significant wall of stone, concrete, wood or other materials.\nMinimum height: 1 m.\nMinimum length (isolated): 1.4 mm (footprint 21 m).",
+   "files": {
+    "svg": "svg/513.svg",
+    "svgTrueSize": "svg-true-size/513.svg",
+    "png": "png/513.png",
+    "sprite": "sprite.svg#isom-2017-2-513"
+   }
+  },
+  {
+   "code": "514",
+   "id": 136,
+   "name": "Ruined wall",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "A ruined or less distinct wall. Minimum height 0.5 m.\nMinimum length: two dashes (3.65 mm - footprint 55 m). If shorter, the object must be exaggerated to the minimum length or changed to symbol Wall (513).",
+   "files": {
+    "svg": "svg/514.svg",
+    "svgTrueSize": "svg-true-size/514.svg",
+    "png": "png/514.png",
+    "sprite": "sprite.svg#isom-2017-2-514"
+   }
+  },
+  {
+   "code": "515",
+   "id": 137,
+   "name": "Impassable wall",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "An impassable or uncrossable wall, normally more than 1.5 m high.\nMinimum length (isolated): 3 mm (footprint 45 m).",
+   "files": {
+    "svg": "svg/515.svg",
+    "svgTrueSize": "svg-true-size/515.svg",
+    "png": "png/515.png",
+    "sprite": "sprite.svg#isom-2017-2-515"
+   }
+  },
+  {
+   "code": "516",
+   "id": 138,
+   "name": "Fence",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "If the fence forms an enclosed area, tags should be placed inside.\nMinimum length (isolated): 1.5 mm (footprint 22.5 m).",
+   "files": {
+    "svg": "svg/516.svg",
+    "svgTrueSize": "svg-true-size/516.svg",
+    "png": "png/516.png",
+    "sprite": "sprite.svg#isom-2017-2-516"
+   }
+  },
+  {
+   "code": "517",
+   "id": 139,
+   "name": "Ruined fence",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "A ruined or less distinct fence. If the fence forms an enclosed area, tags should be placed inside.\nMinimum length: two dashes (3.65 mm - footprint 55 m). If shorter, the symbol must be exaggerated to the minimum length or changed to symbol Fence (516).",
+   "files": {
+    "svg": "svg/517.svg",
+    "svgTrueSize": "svg-true-size/517.svg",
+    "png": "png/517.png",
+    "sprite": "sprite.svg#isom-2017-2-517"
+   }
+  },
+  {
+   "code": "518",
+   "id": 140,
+   "name": "Impassable fence",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "An impassable or uncrossable fence, normally more than 1.5 m high.\nIf the fence forms an enclosed area, tags should be placed inside.\nMinimum length (isolated): 2 mm (footprint 30 m).",
+   "files": {
+    "svg": "svg/518.svg",
+    "svgTrueSize": "svg-true-size/518.svg",
+    "png": "png/518.png",
+    "sprite": "sprite.svg#isom-2017-2-518"
+   }
+  },
+  {
+   "code": "519",
+   "id": 141,
+   "name": "Crossing point",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "A way through or over a wall, fence or other linear feature, including a gate or stile.\nFor impassable features, the line shall be broken at the crossing point. For passable features, the line shall not be broken if passing involves a degree of climb.",
+   "files": {
+    "svg": "svg/519.svg",
+    "svgTrueSize": "svg-true-size/519.svg",
+    "png": "png/519.png",
+    "sprite": "sprite.svg#isom-2017-2-519"
+   }
+  },
+  {
+   "code": "520",
+   "id": 142,
+   "name": "Area that shall not be entered",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "An out-of-bounds area is a feature such as a private house, a garden, a factory or another industrial area. Only contours and prominent features such as railways and large buildings shall be shown inside an out-of-bounds area. Vertical black stripes may be used for areas where it is important to show a complete representation of the terrain (e.g. when a part of the forest is out-of-bounds). The area shall be discontinued where a path or track goes through.\nOut-of-bound areas with a clear border shall be bounded by a black boundary line or another black line. If the border is unclear no black line shall occur.\nCourse planning symbol 709 can be used for temporary out-of bounds areas.\nThe vertical black stripes version of the symbol is orientated to north.\nAn out-of-bounds area shall not be entered.\nMinimum area: 1 mm x 1 mm (footprint 15 m x 15 m).",
+   "files": {
+    "svg": "svg/520.svg",
+    "svgTrueSize": "svg-true-size/520.svg",
+    "png": "png/520.png",
+    "sprite": "sprite.svg#isom-2017-2-520"
+   }
+  },
+  {
+   "code": "520.1",
+   "id": 143,
+   "name": "Area that shall not be entered, solid colour, bounding line",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "Out-of-bound areas with a clear border shall be bounded by a black boundary line or another black line. If the border is unclear no black line shall occur.",
+   "files": {
+    "svg": "svg/520.1.svg",
+    "svgTrueSize": "svg-true-size/520.1.svg",
+    "png": "png/520.1.png",
+    "sprite": "sprite.svg#isom-2017-2-520.1"
+   }
+  },
+  {
+   "code": "520.2",
+   "id": 144,
+   "name": "Area that shall not be entered, stripes",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "An out-of-bounds area is a feature such as a private house, a garden, a factory or another industrial area. Only contours and prominent features such as railways and large buildings shall be shown inside an out-of-bounds area. Vertical black stripes may be used for areas where it is important to show a complete representation of the terrain (e.g. when a part of the forest is out-of-bounds). The area shall be discontinued where a path or track goes through.\nOut-of-bound areas with a clear border shall be bounded by a black boundary line or another black line. If the border is unclear no black line shall occur.\nCourse planning symbol 709 can be used for temporary out-of bounds areas.\nThe vertical black stripes version of the symbol is orientated to north.\nAn out-of-bounds area shall not be entered.\nMinimum area: 1 mm x 1 mm (footprint 15 m x 15 m).",
+   "files": {
+    "svg": "svg/520.2.svg",
+    "svgTrueSize": "svg-true-size/520.2.svg",
+    "png": "png/520.2.png",
+    "sprite": "sprite.svg#isom-2017-2-520.2"
+   }
+  },
+  {
+   "code": "520.3",
+   "id": 145,
+   "name": "Area that shall not be entered, stripes, bounding line",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "Out-of-bound areas with a clear border shall be bounded by a black boundary line or another black line. If the border is unclear no black line shall occur.",
+   "files": {
+    "svg": "svg/520.3.svg",
+    "svgTrueSize": "svg-true-size/520.3.svg",
+    "png": "png/520.3.png",
+    "sprite": "sprite.svg#isom-2017-2-520.3"
+   }
+  },
+  {
+   "code": "521",
+   "id": 146,
+   "name": "Building",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "A building is shown with its ground plan so far as the scale permits.\nBuildings larger than 75 m x 75 m may be represented with a dark grey infill in urban areas.\nPassages through buildings must have a minimum width of 0.3 mm (footprint 4.5 m).\nBuildings within forbidden areas are generalised.\nAreas totally contained within a building shall not be mapped (they shall be represented as being part of the building). Minimum gap indicating a passage between buildings and between buildings and other impassable features should be 0.4 mm.\nMinimum area: 0.5 mm x 0.5 mm (footprint 7.5 m x 7.5 m).",
+   "files": {
+    "svg": "svg/521.svg",
+    "svgTrueSize": "svg-true-size/521.svg",
+    "png": "png/521.png",
+    "sprite": "sprite.svg#isom-2017-2-521"
+   }
+  },
+  {
+   "code": "521.1",
+   "id": 147,
+   "name": "Building, minimum size",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "A building is shown with its ground plan so far as the scale permits.\nBuildings larger than 75 m x 75 m may be represented with a dark grey infill in urban areas.\nPassages through buildings must have a minimum width of 0.3 mm (footprint 4.5 m).\nBuildings within forbidden areas are generalised.\nAreas totally contained within a building shall not be mapped (they shall be represented as being part of the building). Minimum gap indicating a passage between buildings and between buildings and other impassable features should be 0.4 mm.\nMinimum area: 0.5 mm x 0.5 mm (footprint 7.5 m x 7.5 m).",
+   "files": {
+    "svg": "svg/521.1.svg",
+    "svgTrueSize": "svg-true-size/521.1.svg",
+    "png": "png/521.1.png",
+    "sprite": "sprite.svg#isom-2017-2-521.1"
+   }
+  },
+  {
+   "code": "521.2",
+   "id": 148,
+   "name": "Large building with outline",
+   "type": "combined",
+   "shape": "area",
+   "hidden": false,
+   "description": "A building is shown with its ground plan so far as the scale permits.\nBuildings larger than 75 m x 75 m may be represented with a dark grey infill in urban areas.\nPassages through buildings must have a minimum width of 0.3 mm (footprint 4.5 m).\nBuildings within forbidden areas are generalised.\nAreas totally contained within a building shall not be mapped (they shall be represented as being part of the building). Minimum gap indicating a passage between buildings and between buildings and other impassable features should be 0.4 mm.\nMinimum area: 0.5 mm x 0.5 mm (footprint 7.5 m x 7.5 m).",
+   "files": {
+    "svg": "svg/521.2.svg",
+    "svgTrueSize": "svg-true-size/521.2.svg",
+    "png": "png/521.2.png",
+    "sprite": "sprite.svg#isom-2017-2-521.2"
+   }
+  },
+  {
+   "code": "521.3",
+   "id": 149,
+   "name": "Large building",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "A building is shown with its ground plan so far as the scale permits.\nBuildings larger than 75 m x 75 m may be represented with a dark grey infill in urban areas.\nPassages through buildings must have a minimum width of 0.3 mm (footprint 4.5 m).\nBuildings within forbidden areas are generalised.\nAreas totally contained within a building shall not be mapped (they shall be represented as being part of the building). Minimum gap indicating a passage between buildings and between buildings and other impassable features should be 0.4 mm.\nMinimum area: 0.5 mm x 0.5 mm (footprint 7.5 m x 7.5 m).",
+   "files": {
+    "svg": "svg/521.3.svg",
+    "svgTrueSize": "svg-true-size/521.3.svg",
+    "png": "png/521.3.png",
+    "sprite": "sprite.svg#isom-2017-2-521.3"
+   }
+  },
+  {
+   "code": "521.4",
+   "id": 150,
+   "name": "Large building, outline",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "A building is shown with its ground plan so far as the scale permits.\nBuildings larger than 75 m x 75 m may be represented with a dark grey infill in urban areas.\nPassages through buildings must have a minimum width of 0.3 mm (footprint 4.5 m).\nBuildings within forbidden areas are generalised.\nAreas totally contained within a building shall not be mapped (they shall be represented as being part of the building). Minimum gap indicating a passage between buildings and between buildings and other impassable features should be 0.4 mm.\nMinimum area: 0.5 mm x 0.5 mm (footprint 7.5 m x 7.5 m).",
+   "files": {
+    "svg": "svg/521.4.svg",
+    "svgTrueSize": "svg-true-size/521.4.svg",
+    "png": "png/521.4.png",
+    "sprite": "sprite.svg#isom-2017-2-521.4"
+   }
+  },
+  {
+   "code": "522",
+   "id": 151,
+   "name": "Canopy with outline",
+   "type": "combined",
+   "shape": "area",
+   "hidden": false,
+   "description": "An accessible and runnable area with roof.\nMinimum area (isolated): 0.6 mm x 0.6 mm (footprint 9 m x 9 m).\nMinimum (inside) width: 0.3 mm (footprint 4.5 m).",
+   "files": {
+    "svg": "svg/522.svg",
+    "svgTrueSize": "svg-true-size/522.svg",
+    "png": "png/522.png",
+    "sprite": "sprite.svg#isom-2017-2-522"
+   }
+  },
+  {
+   "code": "522.1",
+   "id": 152,
+   "name": "Canopy",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "An accessible and runnable area with roof.\nMinimum area (isolated): 0.6 mm x 0.6 mm (footprint 9 m x 9 m).\nMinimum (inside) width: 0.3 mm (footprint 4.5 m).",
+   "files": {
+    "svg": "svg/522.1.svg",
+    "svgTrueSize": "svg-true-size/522.1.svg",
+    "png": "png/522.1.png",
+    "sprite": "sprite.svg#isom-2017-2-522.1"
+   }
+  },
+  {
+   "code": "522.2",
+   "id": 153,
+   "name": "Canopy, outline",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "An accessible and runnable area with roof.\nMinimum area (isolated): 0.6 mm x 0.6 mm (footprint 9 m x 9 m).\nMinimum (inside) width: 0.3 mm (footprint 4.5 m).",
+   "files": {
+    "svg": "svg/522.2.svg",
+    "svgTrueSize": "svg-true-size/522.2.svg",
+    "png": "png/522.2.png",
+    "sprite": "sprite.svg#isom-2017-2-522.2"
+   }
+  },
+  {
+   "code": "523",
+   "id": 154,
+   "name": "Ruin",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "A ruined building. The ground plan of a ruin is shown to scale, down to the minimum size. Ruins that are so small that they cannot be drawn to scale may be represented using a solid line.\nMinimum area (outside measures): 0.8 mm x 0.8 mm (footprint 12 m x 12 m).",
+   "files": {
+    "svg": "svg/523.svg",
+    "svgTrueSize": "svg-true-size/523.svg",
+    "png": "png/523.png",
+    "sprite": "sprite.svg#isom-2017-2-523"
+   }
+  },
+  {
+   "code": "523.1",
+   "id": 155,
+   "name": "Ruin, minimum size",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "A ruined building. The ground plan of a ruin is shown to scale, down to the minimum size. Ruins that are so small that they cannot be drawn to scale may be represented using a solid line.\nMinimum area (outside measures): 0.8 mm x 0.8 mm (footprint 12 m x 12 m).",
+   "files": {
+    "svg": "svg/523.1.svg",
+    "svgTrueSize": "svg-true-size/523.1.svg",
+    "png": "png/523.1.png",
+    "sprite": "sprite.svg#isom-2017-2-523.1"
+   }
+  },
+  {
+   "code": "524",
+   "id": 156,
+   "name": "High tower",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "A high tower or large pylon. If it is in a forest, it must be visible above the level of the surrounding forest.Towers with a larger footprint must be represented using symbol Building (521).\nThe symbol is orientated to north.\nFootprint: 21 m in diameter.",
+   "files": {
+    "svg": "svg/524.svg",
+    "svgTrueSize": "svg-true-size/524.svg",
+    "png": "png/524.png",
+    "sprite": "sprite.svg#isom-2017-2-524"
+   }
+  },
+  {
+   "code": "525",
+   "id": 157,
+   "name": "Small tower",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "An obvious small tower, platform or seat.\nLocation is at the centre of gravity of the symbol.\nThe symbol is orientated to north.\nFootprint: 15 m x 15 m.",
+   "files": {
+    "svg": "svg/525.svg",
+    "svgTrueSize": "svg-true-size/525.svg",
+    "png": "png/525.png",
+    "sprite": "sprite.svg#isom-2017-2-525"
+   }
+  },
+  {
+   "code": "526",
+   "id": 158,
+   "name": "Cairn",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "A prominent cairn, memorial stone, boundary stone or trigonometric point.\nMinimum height: 0.5 m.\nFootprint: 12 m in diameter.",
+   "files": {
+    "svg": "svg/526.svg",
+    "svgTrueSize": "svg-true-size/526.svg",
+    "png": "png/526.png",
+    "sprite": "sprite.svg#isom-2017-2-526"
+   }
+  },
+  {
+   "code": "527",
+   "id": 159,
+   "name": "Fodder rack",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "A fodder rack, which is free standing or attached to a tree.\nLocation is at the centre of gravity of the symbol.\nThe symbol is orientated to north.\nFootprint: 13.5 m x 13.5 m.",
+   "files": {
+    "svg": "svg/527.svg",
+    "svgTrueSize": "svg-true-size/527.svg",
+    "png": "png/527.png",
+    "sprite": "sprite.svg#isom-2017-2-527"
+   }
+  },
+  {
+   "code": "528",
+   "id": 160,
+   "name": "Prominent line feature",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "A prominent man-made line feature. For example, a low pipeline (gas, water, oil, heat, etc.) or a bobsleigh / skeleton track that is clearly visible. The definition of the symbol must be given on the map.\nMinimum length: 1.5 mm (footprint 22.5 m).",
+   "files": {
+    "svg": "svg/528.svg",
+    "svgTrueSize": "svg-true-size/528.svg",
+    "png": "png/528.png",
+    "sprite": "sprite.svg#isom-2017-2-528"
+   }
+  },
+  {
+   "code": "529",
+   "id": 161,
+   "name": "Prominent impassable line feature",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "An impassable man-made line feature. For example, a high pipeline (gas, water, oil, heat, etc.) or a bobsleigh / skeleton track. The definition of the symbol must be given on the map.\nMinimum length: 2 mm (footprint 30 m).",
+   "files": {
+    "svg": "svg/529.svg",
+    "svgTrueSize": "svg-true-size/529.svg",
+    "png": "png/529.png",
+    "sprite": "sprite.svg#isom-2017-2-529"
+   }
+  },
+  {
+   "code": "530",
+   "id": 162,
+   "name": "Prominent man-made feature – ring",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "Location is at the centre of gravity of the symbol.\nThe definition of the symbol must be given on the map.\nFootprint: 12 m in diameter.",
+   "files": {
+    "svg": "svg/530.svg",
+    "svgTrueSize": "svg-true-size/530.svg",
+    "png": "png/530.png",
+    "sprite": "sprite.svg#isom-2017-2-530"
+   }
+  },
+  {
+   "code": "531",
+   "id": 163,
+   "name": "Prominent man-made feature – x",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "Location is at the centre of gravity of the symbol.\nThe symbol is orientated to north.\nThe definition of the symbol must be given on the map.\nFootprint: 12 m x 12 m.",
+   "files": {
+    "svg": "svg/531.svg",
+    "svgTrueSize": "svg-true-size/531.svg",
+    "png": "png/531.png",
+    "sprite": "sprite.svg#isom-2017-2-531"
+   }
+  },
+  {
+   "code": "532",
+   "id": 164,
+   "name": "Stairway",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "A distinct stairway through the terrain which helps to climb very steep slopes or to cross over impassable objects. A stairway going through rock passages or between impassable objects may be drawn without border lines.\nAn easily runnable stairway or indistinct stairway should be drawn as a footpath. Steps of a stairway shall be represented in a generalized manner.\nMinimum length: 3 (graphical) steps.\nMinimum width: 0.4 mm (IM).",
+   "files": {
+    "svg": "svg/532.svg",
+    "svgTrueSize": "svg-true-size/532.svg",
+    "png": "png/532.png",
+    "sprite": "sprite.svg#isom-2017-2-532"
+   }
+  },
+  {
+   "code": "532.1",
+   "id": 165,
+   "name": "Stairway, without border lines",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "A distinct stairway through the terrain which helps to climb very steep slopes or to cross over impassable objects. A stairway going through rock passages or between impassable objects may be drawn without border lines.\nAn easily runnable stairway or indistinct stairway should be drawn as a footpath. Steps of a stairway shall be represented in a generalized manner.",
+   "files": {
+    "svg": "svg/532.1.svg",
+    "svgTrueSize": "svg-true-size/532.1.svg",
+    "png": "png/532.1.png",
+    "sprite": "sprite.svg#isom-2017-2-532.1"
+   }
+  },
+  {
+   "code": "601.1",
+   "id": 166,
+   "name": "Magnetic north line",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "Magnetic north lines are lines placed on the map pointing to magnetic north, parallel to the sides of the paper. Their spacing on the map shall be 20 mm on the map which represents 300 m on the ground at the scale of 1:15 000. If the map is enlarged to 1:10 000, the spacing of the lines will be 30 mm on the map.\nNorth lines shall be broken to improve the legibility of the map, for instance where they would obscure small features. In areas with very few water features, blue lines may be used.",
+   "files": {
+    "svg": "svg/601.1.svg",
+    "svgTrueSize": "svg-true-size/601.1.svg",
+    "png": "png/601.1.png",
+    "sprite": "sprite.svg#isom-2017-2-601.1"
+   }
+  },
+  {
+   "code": "601.2",
+   "id": 167,
+   "name": "North lines pattern",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "Magnetic north lines are lines placed on the map pointing to magnetic north, parallel to the sides of the paper. Their spacing on the map shall be 20 mm on the map which represents 300 m on the ground at the scale of 1:15 000. If the map is enlarged to 1:10 000, the spacing of the lines will be 30 mm on the map.\nNorth lines shall be broken to improve the legibility of the map, for instance where they would obscure small features. In areas with very few water features, blue lines may be used.",
+   "files": {
+    "svg": "svg/601.2.svg",
+    "svgTrueSize": "svg-true-size/601.2.svg",
+    "png": "png/601.2.png",
+    "sprite": "sprite.svg#isom-2017-2-601.2"
+   }
+  },
+  {
+   "code": "601.3",
+   "id": 168,
+   "name": "Magnetic north line, blue",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "Magnetic north lines are lines placed on the map pointing to magnetic north, parallel to the sides of the paper. Their spacing on the map shall be 20 mm on the map which represents 300 m on the ground at the scale of 1:15 000. If the map is enlarged to 1:10 000, the spacing of the lines will be 30 mm on the map.\nNorth lines shall be broken to improve the legibility of the map, for instance where they would obscure small features. In areas with very few water features, blue lines may be used.",
+   "files": {
+    "svg": "svg/601.3.svg",
+    "svgTrueSize": "svg-true-size/601.3.svg",
+    "png": "png/601.3.png",
+    "sprite": "sprite.svg#isom-2017-2-601.3"
+   }
+  },
+  {
+   "code": "601.4",
+   "id": 169,
+   "name": "North lines pattern, blue",
+   "type": "area",
+   "shape": "area",
+   "hidden": false,
+   "description": "Magnetic north lines are lines placed on the map pointing to magnetic north, parallel to the sides of the paper. Their spacing on the map shall be 20 mm on the map which represents 300 m on the ground at the scale of 1:15 000. If the map is enlarged to 1:10 000, the spacing of the lines will be 30 mm on the map.\nNorth lines shall be broken to improve the legibility of the map, for instance where they would obscure small features. In areas with very few water features, blue lines may be used.",
+   "files": {
+    "svg": "svg/601.4.svg",
+    "svgTrueSize": "svg-true-size/601.4.svg",
+    "png": "png/601.4.png",
+    "sprite": "sprite.svg#isom-2017-2-601.4"
+   }
+  },
+  {
+   "code": "602",
+   "id": 170,
+   "name": "Registration mark",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "At least three registration marks may be placed in the corners of the map. These can be used for printing courses on already printed maps. In addition, it allows a check of colour registration when printing colours separately.",
+   "files": {
+    "svg": "svg/602.svg",
+    "svgTrueSize": "svg-true-size/602.svg",
+    "png": "png/602.png",
+    "sprite": "sprite.svg#isom-2017-2-602"
+   }
+  },
+  {
+   "code": "603.0",
+   "id": 171,
+   "name": "Spot height, dot",
+   "type": "point",
+   "shape": "point",
+   "hidden": false,
+   "description": "Spot heights are used for the rough assessment of height differences. The height is given to the nearest metre.\nWater levels are given without the dot.\nSpot heights must only be used where they do not conflict with other symbols.",
+   "files": {
+    "svg": "svg/603.0.svg",
+    "svgTrueSize": "svg-true-size/603.0.svg",
+    "png": "png/603.0.png",
+    "sprite": "sprite.svg#isom-2017-2-603.0"
+   }
+  },
+  {
+   "code": "603.1",
+   "id": 172,
+   "name": "Spot height, text",
+   "type": "text",
+   "shape": "text",
+   "hidden": false,
+   "description": "Spot heights are used for the rough assessment of height differences. The height is given to the nearest metre.\nWater levels are given without the dot.\nSpot heights must only be used where they do not conflict with other symbols.",
+   "files": {
+    "svg": "svg/603.1.svg",
+    "svgTrueSize": "svg-true-size/603.1.svg",
+    "png": "png/603.1.png",
+    "sprite": "sprite.svg#isom-2017-2-603.1"
+   }
+  },
+  {
+   "code": "701",
+   "id": 173,
+   "name": "Start",
+   "type": "point",
+   "shape": "point",
+   "hidden": true,
+   "description": "The place where the orienteering starts. The centre of the triangle shows the precise position where the orienteering course starts. The start must be on a clearly identifiable point on the map. The triangle points in the direction of the first control.",
+   "files": {
+    "svg": "svg/701.svg",
+    "svgTrueSize": "svg-true-size/701.svg",
+    "png": "png/701.png",
+    "sprite": "sprite.svg#isom-2017-2-701"
+   }
+  },
+  {
+   "code": "702",
+   "id": 174,
+   "name": "Map issue point",
+   "type": "point",
+   "shape": "point",
+   "hidden": true,
+   "description": "If there is a marked route to the start point, the map issue point is marked using this symbol.",
+   "files": {
+    "svg": "svg/702.svg",
+    "svgTrueSize": "svg-true-size/702.svg",
+    "png": "png/702.png",
+    "sprite": "sprite.svg#isom-2017-2-702"
+   }
+  },
+  {
+   "code": "703",
+   "id": 175,
+   "name": "Control point",
+   "type": "point",
+   "shape": "point",
+   "hidden": true,
+   "description": "For point features, the centre of the circle shall be the centre of the symbol. For line and area features, the centre of the circle shows the precise position of the control marker. Controls shall only be placed on points that are clearly identifiable on the map.\nSections of the circle should be omitted to leave important detail showing.\nFootprint 75 m",
+   "files": {
+    "svg": "svg/703.svg",
+    "svgTrueSize": "svg-true-size/703.svg",
+    "png": "png/703.png",
+    "sprite": "sprite.svg#isom-2017-2-703"
+   }
+  },
+  {
+   "code": "704",
+   "id": 176,
+   "name": "Control number",
+   "type": "text",
+   "shape": "text",
+   "hidden": false,
+   "description": "The number of the control is placed close to the control point circle in such a way that it does not obscure important detail.\nThe numbers are orientated to north.",
+   "files": {
+    "svg": "svg/704.svg",
+    "svgTrueSize": "svg-true-size/704.svg",
+    "png": "png/704.png",
+    "sprite": "sprite.svg#isom-2017-2-704"
+   }
+  },
+  {
+   "code": "705",
+   "id": 177,
+   "name": "Course line",
+   "type": "line",
+   "shape": "line",
+   "hidden": true,
+   "description": "Where controls are to be visited in order, the sequence is shown using straight lines from the start to the first control and then from each control to the next one. Sections of lines should be omitted to leave important detail showing. The line should be drawn via mandatory crossing points. There should be gaps between the line and the control circle in order to increase the readability of the underlying detail close to the control.",
+   "files": {
+    "svg": "svg/705.svg",
+    "svgTrueSize": "svg-true-size/705.svg",
+    "png": "png/705.png",
+    "sprite": "sprite.svg#isom-2017-2-705"
+   }
+  },
+  {
+   "code": "706",
+   "id": 178,
+   "name": "Finish",
+   "type": "point",
+   "shape": "point",
+   "hidden": true,
+   "description": "The end of the course.",
+   "files": {
+    "svg": "svg/706.svg",
+    "svgTrueSize": "svg-true-size/706.svg",
+    "png": "png/706.png",
+    "sprite": "sprite.svg#isom-2017-2-706"
+   }
+  },
+  {
+   "code": "707",
+   "id": 179,
+   "name": "Marked route",
+   "type": "line",
+   "shape": "line",
+   "hidden": true,
+   "description": "A marked route that is a part of the course. It is mandatory to follow the marked route.\nMinimum length: 2 dashes (4.5 mm – footprint: 67.5 m).",
+   "files": {
+    "svg": "svg/707.svg",
+    "svgTrueSize": "svg-true-size/707.svg",
+    "png": "png/707.png",
+    "sprite": "sprite.svg#isom-2017-2-707"
+   }
+  },
+  {
+   "code": "708",
+   "id": 180,
+   "name": "Out-of-bounds boundary",
+   "type": "line",
+   "shape": "line",
+   "hidden": true,
+   "description": "A boundary which it is not permitted to cross.\nAn out-of-bounds boundary shall not be crossed.\nMinimum length: 1 mm (footprint: 15 m).",
+   "files": {
+    "svg": "svg/708.svg",
+    "svgTrueSize": "svg-true-size/708.svg",
+    "png": "png/708.png",
+    "sprite": "sprite.svg#isom-2017-2-708"
+   }
+  },
+  {
+   "code": "709",
+   "id": 181,
+   "name": "Out-of-bounds area",
+   "type": "area",
+   "shape": "area",
+   "hidden": true,
+   "description": "An out-of-bounds area. A bounding line may be drawn if there is no natural boundary, as follows:\n– a solid line indicates that the boundary is marked continuously (tapes, etc.) in the terrain,\n– a dashed line indicates intermittent marking in the terrain,\n– no line indicates no marking in the terrain.\nAn out-of-bounds area shall not be entered.\nMinimum area: 2 mm x 2 mm (footprint 30 m x 30 m).",
+   "files": {
+    "svg": "svg/709.svg",
+    "svgTrueSize": "svg-true-size/709.svg",
+    "png": "png/709.png",
+    "sprite": "sprite.svg#isom-2017-2-709"
+   }
+  },
+  {
+   "code": "709.1",
+   "id": 182,
+   "name": "Out-of-bounds area, solid boundary",
+   "type": "line",
+   "shape": "line",
+   "hidden": true,
+   "description": "A solid line indicates that the boundary is marked continuously (tapes, etc.) on the ground.",
+   "files": {
+    "svg": "svg/709.1.svg",
+    "svgTrueSize": "svg-true-size/709.1.svg",
+    "png": "png/709.1.png",
+    "sprite": "sprite.svg#isom-2017-2-709.1"
+   }
+  },
+  {
+   "code": "709.2",
+   "id": 183,
+   "name": "Out-of-bounds area, dashed boundary",
+   "type": "line",
+   "shape": "line",
+   "hidden": true,
+   "description": "A dashed line indicates intermittent marking on the ground.",
+   "files": {
+    "svg": "svg/709.2.svg",
+    "svgTrueSize": "svg-true-size/709.2.svg",
+    "png": "png/709.2.png",
+    "sprite": "sprite.svg#isom-2017-2-709.2"
+   }
+  },
+  {
+   "code": "710",
+   "id": 184,
+   "name": "Crossing point",
+   "type": "point",
+   "shape": "point",
+   "hidden": true,
+   "description": "A crossing point, for instance through or over a wall or fence, across a road or railway, through a tunnel or out-of-bounds area, or over an uncrossable boundary is drawn on the map with two lines curving outwards. The lines shall reflect the length of the crossing.",
+   "files": {
+    "svg": "svg/710.svg",
+    "svgTrueSize": "svg-true-size/710.svg",
+    "png": "png/710.png",
+    "sprite": "sprite.svg#isom-2017-2-710"
+   }
+  },
+  {
+   "code": "711",
+   "id": 185,
+   "name": "Out-of-bounds route",
+   "type": "line",
+   "shape": "line",
+   "hidden": true,
+   "description": "A route which is out-of-bounds. Competitors are allowed to cross directly over a forbidden route, but it is forbidden to go along it.\nAn out-of-bounds route shall not be used.\nMinimum length: 2 symbols (6 mm – footprint 90 m).",
+   "files": {
+    "svg": "svg/711.svg",
+    "svgTrueSize": "svg-true-size/711.svg",
+    "png": "png/711.png",
+    "sprite": "sprite.svg#isom-2017-2-711"
+   }
+  },
+  {
+   "code": "711.1",
+   "id": 186,
+   "name": "Out-of-bounds route, single cross",
+   "type": "point",
+   "shape": "point",
+   "hidden": true,
+   "description": "A route which is out-of-bounds. Competitors are allowed to cross directly over a forbidden route, but it is forbidden to go along it.\nAn out-of-bounds route shall not be used.\nMinimum length: 2 symbols (6 mm – footprint 90 m).",
+   "files": {
+    "svg": "svg/711.1.svg",
+    "svgTrueSize": "svg-true-size/711.1.svg",
+    "png": "png/711.1.png",
+    "sprite": "sprite.svg#isom-2017-2-711.1"
+   }
+  },
+  {
+   "code": "712",
+   "id": 187,
+   "name": "First aid post",
+   "type": "point",
+   "shape": "point",
+   "hidden": true,
+   "description": "The location of a first aid post.",
+   "files": {
+    "svg": "svg/712.svg",
+    "svgTrueSize": "svg-true-size/712.svg",
+    "png": "png/712.png",
+    "sprite": "sprite.svg#isom-2017-2-712"
+   }
+  },
+  {
+   "code": "713",
+   "id": 188,
+   "name": "Refreshment point",
+   "type": "point",
+   "shape": "point",
+   "hidden": true,
+   "description": "The location of a refreshment point which is not at a control.",
+   "files": {
+    "svg": "svg/713.svg",
+    "svgTrueSize": "svg-true-size/713.svg",
+    "png": "png/713.png",
+    "sprite": "sprite.svg#isom-2017-2-713"
+   }
+  },
+  {
+   "code": "799",
+   "id": 189,
+   "name": "Simple Orienteering Course",
+   "type": "line",
+   "shape": "line",
+   "hidden": false,
+   "description": "This symbol provides a simple and quick way to make training courses.\n\nThe purple line will extend a bit into the finish symbol. This is a shortcoming of this simple approach.",
+   "files": {
+    "svg": "svg/799.svg",
+    "svgTrueSize": "svg-true-size/799.svg",
+    "png": "png/799.png",
+    "sprite": "sprite.svg#isom-2017-2-799"
+   }
+  }
+ ]
+}
