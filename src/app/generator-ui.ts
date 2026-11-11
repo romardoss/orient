@@ -1,6 +1,6 @@
 /** Generator page: parameter form ↔ URL, worker-driven generation, pan/zoom viewer, exports. */
 import "./style.css";
-import { DEFAULT_PARAMS, type MapParams, PRESETS, type PresetId, TERRAIN_KEYS, randomTerrain } from "../generator/params";
+import { DEFAULT_PARAMS, type MapParams, PRESETS, type PresetId, TERRAIN_KEYS, clampRelief, randomTerrain } from "../generator/params";
 import { assetRoot } from "./data";
 import { type PdfImagePage, buildPdf } from "./pdf";
 import type { WorkerRequest, WorkerResponse } from "./worker";
@@ -38,6 +38,7 @@ function fromHash(): UiState {
   const p = s.params;
   p.seed = num("seed") ?? p.seed;
   for (const k of SLIDERS) p[k] = num(k) ?? p[k];
+  p.relief = clampRelief(p.relief);
   const scale = num("scale");
   if (scale === 10000 || scale === 15000) p.scale = scale;
   const ci = num("ci");
@@ -111,6 +112,7 @@ function readForm(): UiState {
   s.preset = field<HTMLSelectElement>("preset").value as PresetId;
   p.seed = Math.floor(Number(field<HTMLInputElement>("seed").value) || 1);
   for (const k of SLIDERS) p[k] = Number(field<HTMLInputElement>(k).value);
+  p.relief = clampRelief(p.relief);
   p.title = field<HTMLInputElement>("title").value || "Orienteering map";
   p.symbolSize = Number(field<HTMLInputElement>("symbolSize").value) || 1;
   p.scale = Number(field<HTMLSelectElement>("scale").value) as MapParams["scale"];
@@ -401,14 +403,17 @@ async function batchPdf() {
   const info = $<HTMLElement>("batchInfo");
   const infoText = info.textContent;
 
-  // Each map: random seed + random terrain; sheet, scale and course come from the form.
+  // Each map gets a random seed + random terrain. Everything else is inherited from the left panel:
+  // sheet (format, scale, symbol size, contour interval), course (on/off, number of controls, length,
+  // leg lines or controls only) and display options (palette, overprint, control description sheet, title box).
   const jobs = Array.from({ length: count }, (_, i) => {
     const params: MapParams = structuredClone(base.params);
     Object.assign(params, randomTerrain());
+    params.course = { ...base.params.course };
     params.title = count > 1 ? `${base.params.title} · ${i + 1}` : base.params.title;
     return params;
   });
-  const draw = { palette: base.palette, overprint: base.overprint, showSheet: base.showSheet, showTitle: base.showTitle };
+  const draw: WorkerRequest["draw"] = { palette: base.palette, overprint: base.overprint, showSheet: base.showSheet, showTitle: base.showTitle };
 
   batchCancelled = false;
   startBtn.disabled = true;

@@ -5,7 +5,7 @@ import { drawMap } from "../src/generator/draw";
 import { Grid } from "../src/generator/grid";
 import { generateMap } from "../src/generator/index";
 import { isolines, ringArea } from "../src/generator/iso";
-import { DEFAULT_PARAMS, type MapParams, PRESETS } from "../src/generator/params";
+import { DEFAULT_PARAMS, type MapParams, PRESETS, RELIEF_MAX, clampRelief, randomTerrain } from "../src/generator/params";
 import { Rng } from "../src/generator/rng";
 import type { DescSymbolSet } from "../src/symbols/control-descriptions";
 import type { SymbolSet } from "../src/symbols/types";
@@ -99,5 +99,16 @@ describe("map generator", () => {
     const pp = params({ ...PRESETS[preset as keyof typeof PRESETS].params, seed: 7 });
     const m = generateMap(pp);
     expect(m.features.length).toBeGreaterThan(50);
+  });
+});
+
+describe("relief limit", () => {
+  it("keeps every preset, the default and random terrain within RELIEF_MAX", () => {
+    expect(RELIEF_MAX).toBe(30);
+    expect(DEFAULT_PARAMS.relief).toBeLessThanOrEqual(RELIEF_MAX);
+    for (const pr of Object.values(PRESETS)) expect(pr.params.relief ?? 0).toBeLessThanOrEqual(RELIEF_MAX);
+    const rng = new Rng(7);
+    for (let i = 0; i < 500; i++) expect(randomTerrain(() => rng.next()).relief).toBeLessThanOrEqual(RELIEF_MAX);
+    expect(clampRelief(180)).toBe(RELIEF_MAX);
   });
 });

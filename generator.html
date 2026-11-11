@@ -27,7 +27,7 @@
               <span class="seed"><input type="number" name="seed" /><button type="button" id="dice" title="Випадковий seed">↻</button></span>
             </label>
             <label class="row">Перепад висот, м <output data-for="relief"></output>
-              <input type="range" name="relief" min="8" max="180" step="1" />
+              <input type="range" name="relief" min="8" max="30" step="1" title="Поки що не більше 30 м: генератор горизонталей на крутішому рельєфі працює некоректно (буде виправлено)" />
             </label>
             <label class="row">Дрібний рельєф <output data-for="detail"></output>
               <input type="range" name="detail" min="0" max="1" step="0.05" />
@@ -133,11 +133,11 @@
             </select>
           </label>
           <div class="buttons">
-            <button type="button" id="batchPdf" class="random" title="Кожна карта — випадковий seed і випадкова місцевість; формат, масштаб і дистанція — з форми">📄 Згенерувати PDF</button>
+            <button type="button" id="batchPdf" class="random" title="Кожна карта — випадковий seed і випадкова місцевість; усі інші налаштування (аркуш, дистанція, лінії між КП, легенда КП, блок з назвою, кольори) — з лівої панелі">📄 Згенерувати PDF</button>
             <button type="button" id="batchCancel" hidden>Скасувати</button>
           </div>
           <progress id="batchProgress" max="1" value="0" hidden></progress>
-          <p class="hint" id="batchInfo">Кожна сторінка — нова випадкова карта (місцевість і seed). Формат аркуша, масштаб і дистанція беруться з форми.</p>
+          <p class="hint" id="batchInfo">Кожна сторінка — нова випадкова карта (місцевість і seed). Решта налаштувань наслідується з лівої панелі: аркуш, дистанція, лінії між КП (або лише кружки), легенда КП, блок з назвою, кольори.</p>
         </fieldset>
         <fieldset>
           <legend>Легенда КП (IOF)</legend>

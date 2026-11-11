@@ -2,7 +2,7 @@
 import { Grid } from "./grid";
 import { MinHeap } from "./heap";
 import { Noise } from "./noise";
-import type { MapParams } from "./params";
+import { type MapParams, clampRelief } from "./params";
 import { type River, buildRivers } from "./river";
 import type { Rng } from "./rng";
 
@@ -71,7 +71,7 @@ export function buildFields(p: MapParams, widthM: number, heightM: number, rng: 
   const bumpN = n("bumps");
 
   // --- height
-  const relief = p.relief;
+  const relief = clampRelief(p.relief);
   const roughness = 0.4 + p.detail;
   const height = new Grid(nx, ny, cell).fill((x, y) => {
     const wx = warpN.fbm(x / 900, y / 900, 3) * 260;
